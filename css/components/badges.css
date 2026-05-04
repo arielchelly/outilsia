@@ -1,0 +1,84 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  border: 1px solid transparent;
+}
+.badge-free {
+  background: var(--electric-glow);
+  color: var(--electric);
+  border-color: rgba(77,255,180,0.25);
+}
+.badge-paid {
+  background: var(--gold-glow);
+  color: var(--gold);
+  border-color: rgba(232,200,120,0.2);
+}
+.badge-freemium {
+  background: var(--sky-glow);
+  color: var(--sky);
+  border-color: rgba(126,179,255,0.2);
+}
+.badge-recommended, .badge-gold {
+  background: linear-gradient(135deg, rgba(232,200,120,0.2), rgba(232,200,120,0.05));
+  color: var(--gold);
+  border-color: var(--border-gold);
+}
+.badge-electric {
+  background: linear-gradient(135deg, rgba(77,255,180,0.18), rgba(77,255,180,0.04));
+  color: var(--electric);
+  border-color: rgba(77,255,180,0.3);
+}
+.badge-new {
+  background: var(--coral-glow);
+  color: var(--coral);
+  border-color: rgba(255,107,107,0.2);
+}
+.badge-soft {
+  background: var(--bg-overlay);
+  color: var(--text-secondary);
+  border-color: var(--border-subtle);
+}
+
+.badge-pulse {
+  position: relative;
+}
+.badge-pulse::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+  animation: pulseBlink 1.6s ease-in-out infinite;
+}
+@keyframes pulseBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+.hero-badge .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--electric);
+  box-shadow: 0 0 8px var(--electric);
+}

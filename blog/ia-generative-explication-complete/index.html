@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080B14">
+<title>L&#39;IA générative expliquée simplement : comprendre la révolution en 10 minutes | TopOutils.IA</title>
+<meta name="description" content="Comprendre l&#39;IA générative en 2026 : LLM, transformer, hallucinations, tokens, prompt engineering. Explication claire pour non-techs.">
+
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://topoutils.ia/blog/ia-generative-explication-complete/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://unavatar.io">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<meta property="og:type" content="article">
+<meta property="og:title" content="L&#39;IA générative expliquée simplement : comprendre la révolution en 10 minutes | TopOutils.IA">
+<meta property="og:description" content="Comprendre l&#39;IA générative en 2026 : LLM, transformer, hallucinations, tokens, prompt engineering. Explication claire pour non-techs.">
+<meta property="og:image" content="https://topoutils.ia/images/og/ia-generative-explication-complete.svg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://topoutils.ia/blog/ia-generative-explication-complete/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/typography.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/animations.css">
+<link rel="stylesheet" href="/css/components/header.css">
+<link rel="stylesheet" href="/css/components/footer.css">
+<link rel="stylesheet" href="/css/components/cards.css">
+<link rel="stylesheet" href="/css/components/table.css">
+<link rel="stylesheet" href="/css/components/buttons.css">
+<link rel="stylesheet" href="/css/components/badges.css">
+<link rel="stylesheet" href="/css/components/scores.css">
+<link rel="stylesheet" href="/css/components/forms.css">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"L'IA générative expliquée simplement : comprendre la révolution en 10 minutes","author":{"@type":"Organization","name":"TopOutils.IA"},"publisher":{"@type":"Organization","name":"TopOutils.IA","logo":{"@type":"ImageObject","url":"https://topoutils.ia/images/og/home.svg"}},"datePublished":"2026-02-05","dateModified":"2026-05-01","image":"https://topoutils.ia/images/og/ia-generative-explication-complete.svg","description":"Comprendre l'IA générative en 2026 : LLM, transformer, hallucinations, tokens, prompt engineering. Explication claire pour non-techs."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qu'est-ce que l'IA générative en termes simples ?","acceptedAnswer":{"@type":"Answer","text":"L'IA générative est un système informatique entraîné sur d'énormes quantités de texte humain pour prédire et générer du contenu (texte, images, vidéo, code). Elle 'imite' la créativité humaine en se basant sur ce qu'elle a appris, sans réellement comprendre comme un humain."}},{"@type":"Question","name":"L'IA générative est-elle vraiment intelligente ?","acceptedAnswer":{"@type":"Answer","text":"Pas au sens humain. Elle est extraordinairement compétente pour générer du contenu cohérent, mais elle ne 'comprend' pas vraiment ni n'a de conscience. C'est un système statistique très sophistiqué qui prédit le mot/pixel le plus probable."}},{"@type":"Question","name":"Pourquoi l'IA invente-t-elle parfois des informations fausses ?","acceptedAnswer":{"@type":"Answer","text":"Ces 'hallucinations' sont un défaut inhérent au fonctionnement statistique des LLMs. Le modèle génère le mot le plus probable, même si l'information n'est pas factuellement correcte. C'est pour cela qu'il faut toujours vérifier les faits critiques."}},{"@type":"Question","name":"Vais-je perdre mon emploi à cause de l'IA générative ?","acceptedAnswer":{"@type":"Answer","text":"L'IA va transformer la plupart des emplois mais en remplacer peu totalement. Les rôles répétitifs (rédaction basique, traduction simple, support) sont les plus exposés. Les rôles nécessitant jugement, relation humaine, créativité stratégique restent humains. Apprendre à utiliser l'IA est crucial."}},{"@type":"Question","name":"Quelle est la différence entre Claude, ChatGPT, et Gemini ?","acceptedAnswer":{"@type":"Answer","text":"Tous sont des LLMs (Large Language Models) avec des philosophies différentes. Claude (Anthropic) mise sur la sécurité et la nuance. ChatGPT (OpenAI) sur la polyvalence et l'écosystème. Gemini (Google) sur le contexte massif et l'intégration Workspace. Voir notre comparatif détaillé pour choisir."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://topoutils.ia/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://topoutils.ia/blog/"},{"@type":"ListItem","position":3,"name":"L'IA générative expliquée simplement : comprendre la révolution en 10 minutes","item":"https://topoutils.ia/blog/ia-generative-explication-complete/"}]}</script>
+</head>
+<body><header class="site-header">
+  <div class="container">
+    <a href="/" class="brand"><span class="brand-dot"></span>TopOutils<span style="color:var(--text-muted)">.</span>IA</a>
+    <nav class="nav-main">
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Comparatifs</button>
+        <div class="dropdown-panel">
+          <a class="dropdown-item" href="/pages/image-ia/"><span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span><span class="dropdown-item-text"><span class="dropdown-item-title">Image IA</span></span></a><a class="dropdown-item" href="/pages/video-ia/"><span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span><span class="dropdown-item-text"><span class="dropdown-item-title">Vidéo IA</span></span></a><a class="dropdown-item" href="/pages/copywriting-ia/"><span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span><span class="dropdown-item-text"><span class="dropdown-item-title">Copywriting IA</span></span></a><a class="dropdown-item" href="/pages/traduction-ia/"><span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg></span><span class="dropdown-item-text"><span class="dropdown-item-title">Traduction IA</span></span></a><a class="dropdown-item" href="/pages/chatbot-ia/"><span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></span><span class="dropdown-item-text"><span class="dropdown-item-title">Chatbot IA</span></span></a><a class="dropdown-item" href="/pages/seo-ia/"><span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span><span class="dropdown-item-text"><span class="dropdown-item-title">SEO IA</span></span></a><a class="dropdown-item" href="/pages/code-ia/"><span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span><span class="dropdown-item-text"><span class="dropdown-item-title">Code IA</span></span></a><a class="dropdown-item" href="/pages/automatisation-ia/"><span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg></span><span class="dropdown-item-text"><span class="dropdown-item-title">Automatisation IA</span></span></a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<main style="padding-top: var(--header-height);">
+  <article>
+    <header style="padding: 4rem 0 2rem; position: relative; overflow: hidden;">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container-narrow" style="position: relative;">
+        <nav aria-label="Fil d'Ariane" class="text-muted" style="font-size: 0.85rem; margin-bottom: 1.5rem;"><a href="/" style="color:var(--text-secondary);">Accueil</a><span style="color:var(--text-muted); margin: 0 0.5rem;">/</span><a href="/blog/" style="color:var(--text-secondary);">Blog</a><span style="color:var(--text-muted); margin: 0 0.5rem;">/</span><span style="color:var(--text-primary);">L&#39;IA générative expliquée simplement : comprendre la révolution en 10 minutes</span></nav>
+        <span class="eyebrow">Chatbot IA</span>
+        <h1 style="margin: 0.75rem 0 1.5rem;">L&#39;IA générative : comprendre la révolution en 10 minutes</h1>
+        <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; color: var(--text-muted); font-size: 0.9rem;">
+          <span>📅 2026-05-01</span>
+          <span>⏱ 10 min de lecture</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-narrow" style="font-size: 1.05rem; line-height: 1.8; padding-bottom: 4rem;">
+      <div class="article-content">
+        <div class="box-summary"><h3>À retenir</h3><ul><li>L'IA générative <strong>prédit</strong> le mot suivant, elle ne <strong>raisonne</strong> pas comme un humain</li><li>Les <strong>LLMs</strong> (Large Language Models) sont entraînés sur des téraoctets de texte</li><li>Les <strong>hallucinations</strong> sont inhérentes : l'IA invente parfois</li><li>Le <strong>prompt engineering</strong> = l'art de poser les bonnes questions</li><li>L'IA est un outil, pas un oracle. Vérifiez toujours les faits critiques.</li></ul></div><h2>Qu'est-ce que l'IA générative, vraiment ?</h2><p>Quand vous tapez une question dans ChatGPT et qu'il vous répond, vous avez l'impression de parler à une intelligence. La réalité est plus subtile : l'IA générative <strong>prédit le mot le plus probable suivant</strong>, en se basant sur l'entraînement qu'elle a reçu sur des milliards de textes humains.</p><p>Pas de magie. Pas de conscience. Juste une statistique extraordinairement complexe.</p><h2>Les concepts à connaître</h2><h3>Le LLM (Large Language Model)</h3><p>Un LLM est un modèle mathématique gigantesque (Claude, GPT-4, Gemini, Llama) qui a 'lu' une grande partie d'internet : Wikipedia, livres, articles, code, forums. Il a appris les patterns du langage humain : grammaire, style, raisonnement, connaissances factuelles. Quand vous lui posez une question, il génère mot par mot la réponse statistiquement la plus probable.</p><h3>Le transformer (l'architecture)</h3><p>Tous les LLMs modernes utilisent une architecture appelée 'transformer' (introduite par Google en 2017). L'innovation clé : le mécanisme d'attention, qui permet au modèle de comprendre les relations entre mots, même éloignés dans une phrase. Cette architecture est ce qui a rendu possible ChatGPT et tous ses successeurs.</p><h3>Les tokens</h3><p>Le LLM ne 'voit' pas des mots, mais des tokens (unités sub-lexicales). 'Bonjour' = 1 token. 'Anthropic' = peut-être 2-3 tokens. En français, 1 mot ≈ 1.3 tokens en moyenne. Quand on parle de 'contexte 200K tokens', cela représente environ 150K mots, soit 500 pages.</p><h3>Le contexte</h3><p>Le contexte est tout ce que l'IA 'voit' à un moment donné : votre prompt, ses réponses précédentes, les documents fournis. Plus le contexte est large, plus l'IA peut traiter de longs documents. Gemini 1.5 Pro = 2M tokens (record en 2026), Claude = 200K, ChatGPT = 128K.</p><h3>Les hallucinations</h3><p>L'IA peut inventer des faits avec une assurance totale : citer un livre qui n'existe pas, attribuer une citation à la mauvaise personne, donner une référence scientifique fictive. C'est un défaut <strong>inhérent</strong> au fonctionnement statistique. Vérifiez toujours les faits critiques.</p><h3>Le prompt engineering</h3><p>L'art de poser des questions à une IA pour obtenir les meilleures réponses. Les bons prompts sont :</p><ul><li><strong>Précis</strong> : décrivez exactement ce que vous voulez</li><li><strong>Contextualisés</strong> : donnez le contexte (rôle, public, but)</li><li><strong>Structurés</strong> : décomposez les tâches complexes</li><li><strong>Itératifs</strong> : affinez par dialogue</li></ul><h2>Les types d'IA générative</h2><h3>1. Texte (LLMs)</h3><p>Claude, ChatGPT, Gemini, Mistral, Llama. Génèrent du texte : réponses, articles, code, traductions, analyses.</p><h3>2. Image</h3><p>Midjourney, DALL-E, Stable Diffusion, Flux. Génèrent des images depuis un prompt textuel.</p><h3>3. Vidéo</h3><p>Sora, Runway, Pika, Kling. Génèrent des vidéos courtes (5-20s en 2026) depuis un prompt.</p><h3>4. Audio</h3><p>Suno, ElevenLabs, MusicGen. Génèrent musique, voix, effets sonores.</p><h3>5. Code</h3><p>Copilot, Cursor, Claude Code. Spécialisés pour générer/modifier du code.</p><h3>6. 3D et autres</h3<p>Émerge en 2026 : génération de modèles 3D, animations, structures moléculaires (chimie/biologie).</p><h2>Comment l'IA est entraînée</h2><p>Trois étapes principales :</p><ol><li><strong>Pre-training :</strong> le modèle 'lit' des téraoctets de texte (web, livres, code) et apprend les patterns du langage. Coûte des dizaines de millions $.</li><li><strong>Fine-tuning :</strong> on ajuste le modèle sur des tâches spécifiques (conversation, code, raisonnement). Coûte moins cher.</li><li><strong>RLHF (Reinforcement Learning from Human Feedback) :</strong> des humains notent les réponses, le modèle apprend à préférer les réponses bien notées. C'est ce qui rend ChatGPT 'utile et inoffensif'.</li></ol><h2>Les limites à comprendre</h2><h3>1. Le cut-off de connaissances</h3><p>Chaque modèle a une date de cut-off : il ne connaît rien après. Claude Opus 4.7 a un cut-off à janvier 2026. Les événements postérieurs sont inconnus (sauf si l'IA a un outil de recherche web).</p><h3>2. Les biais</h3><p>L'IA hérite des biais des données d'entraînement : stéréotypes culturels, sur-représentation de certaines langues/cultures, opinions implicites. Restez critique.</p><h3>3. Le raisonnement limité</h3><p>L'IA est excellente sur les patterns appris, médiocre sur le raisonnement vraiment nouveau. Les problèmes mathématiques, logiques ou de planification complexe restent difficiles.</p><h3>4. La cohérence</h3><p>Sur des conversations longues ou des projets complexes, l'IA peut perdre le fil, oublier des contraintes, contredire ses dires précédents.</p><h2>Comment bien utiliser l'IA générative en 2026</h2><div class="box-verdict"><ol><li><strong>Vérifiez les faits critiques.</strong> Ne publiez jamais une statistique, citation ou référence sans vérifier.</li><li><strong>Itérez.</strong> Le premier jet n'est jamais le meilleur. Affinez par dialogue.</li><li><strong>Combinez les outils.</strong> Aucune IA n'est universelle. <a href="/pages/chatbot-ia/#claude-chatbot">Claude</a> pour la nuance, <a href="/pages/chatbot-ia/#chatgpt-bot">ChatGPT</a> pour la polyvalence, <a href="/pages/chatbot-ia/#gemini-bot">Gemini</a> pour le contexte massif.</li><li><strong>Restez maître.</strong> L'IA propose, vous décidez. Ne déléguez jamais le jugement final.</li><li><strong>Apprenez à prompter.</strong> 80% de la qualité d'une réponse vient de la qualité du prompt.</li></ol></div>
+      </div>
+
+      
+        <section style="margin-top: 4rem;">
+          <h2 style="margin-bottom: 1.5rem;">Questions fréquentes</h2>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <details style="background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1.5rem;">
+              <summary style="cursor: pointer; font-weight: 500; color: var(--text-primary); font-size: 1.02rem;">Qu&#39;est-ce que l&#39;IA générative en termes simples ?</summary>
+              <p style="margin-top: 0.75rem; color: var(--text-secondary);">L&#39;IA générative est un système informatique entraîné sur d&#39;énormes quantités de texte humain pour prédire et générer du contenu (texte, images, vidéo, code). Elle &#39;imite&#39; la créativité humaine en se basant sur ce qu&#39;elle a appris, sans réellement comprendre comme un humain.</p>
+            </details><details style="background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1.5rem;">
+              <summary style="cursor: pointer; font-weight: 500; color: var(--text-primary); font-size: 1.02rem;">L&#39;IA générative est-elle vraiment intelligente ?</summary>
+              <p style="margin-top: 0.75rem; color: var(--text-secondary);">Pas au sens humain. Elle est extraordinairement compétente pour générer du contenu cohérent, mais elle ne &#39;comprend&#39; pas vraiment ni n&#39;a de conscience. C&#39;est un système statistique très sophistiqué qui prédit le mot/pixel le plus probable.</p>
+            </details><details style="background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1.5rem;">
+              <summary style="cursor: pointer; font-weight: 500; color: var(--text-primary); font-size: 1.02rem;">Pourquoi l&#39;IA invente-t-elle parfois des informations fausses ?</summary>
+              <p style="margin-top: 0.75rem; color: var(--text-secondary);">Ces &#39;hallucinations&#39; sont un défaut inhérent au fonctionnement statistique des LLMs. Le modèle génère le mot le plus probable, même si l&#39;information n&#39;est pas factuellement correcte. C&#39;est pour cela qu&#39;il faut toujours vérifier les faits critiques.</p>
+            </details><details style="background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1.5rem;">
+              <summary style="cursor: pointer; font-weight: 500; color: var(--text-primary); font-size: 1.02rem;">Vais-je perdre mon emploi à cause de l&#39;IA générative ?</summary>
+              <p style="margin-top: 0.75rem; color: var(--text-secondary);">L&#39;IA va transformer la plupart des emplois mais en remplacer peu totalement. Les rôles répétitifs (rédaction basique, traduction simple, support) sont les plus exposés. Les rôles nécessitant jugement, relation humaine, créativité stratégique restent humains. Apprendre à utiliser l&#39;IA est crucial.</p>
+            </details><details style="background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1.5rem;">
+              <summary style="cursor: pointer; font-weight: 500; color: var(--text-primary); font-size: 1.02rem;">Quelle est la différence entre Claude, ChatGPT, et Gemini ?</summary>
+              <p style="margin-top: 0.75rem; color: var(--text-secondary);">Tous sont des LLMs (Large Language Models) avec des philosophies différentes. Claude (Anthropic) mise sur la sécurité et la nuance. ChatGPT (OpenAI) sur la polyvalence et l&#39;écosystème. Gemini (Google) sur le contexte massif et l&#39;intégration Workspace. Voir notre comparatif détaillé pour choisir.</p>
+            </details>
+          </div>
+        </section>
+      
+
+      
+        <div style="margin-top: 4rem; text-align: center;">
+          <a href="/pages/chatbot-ia/" class="btn btn-primary">Voir le comparatif Chatbot IA →</a>
+        </div>
+      
+    </div>
+  </article>
+
+  <section style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 4rem 0;">
+    <div class="container">
+      <div class="newsletter-box">
+        <div class="newsletter-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h2>Le digest <span class="italic text-gold">mensuel</span></h2>
+        <p>1 email/mois. Les nouveaux articles, les bons plans, nos analyses.</p>
+        <form class="newsletter-form" novalidate>
+          <input type="email" name="email" placeholder="vous@email.com" required>
+          <button type="submit" class="btn btn-primary">S'abonner</button>
+        </form>
+        <p class="newsletter-status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+.article-content h2 { font-family: var(--font-display); font-weight: 400; font-size: 2rem; color: var(--text-primary); margin: 2.5rem 0 1rem; }
+.article-content h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.25rem; color: var(--text-primary); margin: 2rem 0 0.75rem; }
+.article-content p { margin-bottom: 1.25rem; color: var(--text-secondary); }
+.article-content ul, .article-content ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.article-content ul li { list-style: disc; color: var(--text-secondary); margin-bottom: 0.5rem; }
+.article-content ol li { list-style: decimal; color: var(--text-secondary); margin-bottom: 0.5rem; }
+.article-content strong { color: var(--text-primary); }
+.article-content a { color: var(--sky); text-decoration: underline; text-underline-offset: 3px; }
+.article-content a:hover { color: var(--gold); }
+.article-content table { margin: 1.5rem 0; }
+</style>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="affiliate-disclaimer">
+      <strong>Transparence :</strong> TopOutils.IA participe à des programmes d'affiliation. Certains liens peuvent générer une commission, sans surcoût pour vous. Nos évaluations restent 100% indépendantes — aucune marque ne peut acheter une bonne note.
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand"><span class="brand-dot"></span>TopOutils<span style="color:var(--text-muted)">.</span>IA</a>
+        <p>Le comparatif de référence des outils IA en français.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Comparatifs</h4>
+        <ul>
+          <li><a href="/pages/image-ia/">Image IA</a></li><li><a href="/pages/video-ia/">Vidéo IA</a></li><li><a href="/pages/copywriting-ia/">Copywriting IA</a></li><li><a href="/pages/traduction-ia/">Traduction IA</a></li><li><a href="/pages/chatbot-ia/">Chatbot IA</a></li><li><a href="/pages/seo-ia/">SEO IA</a></li><li><a href="/pages/code-ia/">Code IA</a></li><li><a href="/pages/automatisation-ia/">Automatisation IA</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">À propos</a></li>
+          <li><a href="/about/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="/about/#mentions">Mentions légales</a></li>
+          <li><a href="/about/#cookies">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TopOutils.IA</p>
+      <p>Fait avec soin en 🇫🇷</p>
+    </div>
+  </div>
+</footer>
+<script src="/js/core/utils.js" defer></script>
+<script src="/js/core/store.js" defer></script>
+<script src="/js/ui/cursor.js" defer></script>
+<script src="/js/ui/reveal.js" defer></script>
+<script src="/js/ui/header.js" defer></script>
+<script src="/js/ui/countup.js" defer></script>
+<script src="/js/features/comparatif.js" defer></script>
+<script src="/js/features/filters.js" defer></script>
+<script src="/js/features/newsletter.js" defer></script>
+<script src="/js/features/tracking.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#080B14"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#E8C878" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#E8C878" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <text x="80" y="120" font-family="Outfit, sans-serif" font-size="22" letter-spacing="6" fill="#E8C878" text-transform="uppercase">TOPOUTILS.IA</text>
+  <text x="80" y="335" font-family="Cormorant Garamond, Georgia, serif" font-weight="300" font-size="68" fill="#F0F4FF">
+    <tspan x="80" dy="0">GitHub Copilot vs Cursor : coder avec IA</tspan><tspan x="80" dy="80">en 2026</tspan>
+  </text>
+  <text x="80" y="560" font-family="Outfit, sans-serif" font-size="22" fill="#8892A4">Comparatif indépendant • Mai 2026</text>
+  <circle cx="1100" cy="100" r="4" fill="#E8C878"/>
+</svg>

@@ -1,0 +1,3 @@
+/comparatifs/*  /pages/:splat  301
+/outils         /pages         301
+/categorie/*    /pages/:splat  301
