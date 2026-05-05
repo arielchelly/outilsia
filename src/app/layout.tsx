@@ -7,7 +7,6 @@ import { SiteFooter } from '@/components/site-footer';
 import { CookieBanner } from '@/components/cookie-banner';
 import { GlobalMouseGlow } from '@/components/global-mouse-glow';
 import { SmoothScroll } from '@/components/smooth-scroll';
-import { CustomCursor } from '@/components/CustomCursor';
 import { Toaster } from '@/components/ui/toaster';
 import { SITE_NAME, SITE_URL } from '@/lib/data';
 import './globals.css';
@@ -136,7 +135,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       }
     >
       <body className="font-sans">
-        <CustomCursor />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

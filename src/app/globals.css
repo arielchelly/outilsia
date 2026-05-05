@@ -91,14 +91,6 @@
     background-size: 200px 200px;
   }
 
-  /* Custom cursor takes over via <CustomCursor /> on fine pointers.
-     Hide the native cursor everywhere when the component is mounted. */
-  @media (pointer: fine) {
-    html.has-custom-cursor,
-    html.has-custom-cursor * {
-      cursor: none !important;
-    }
-  }
 }
 
 @layer components {
