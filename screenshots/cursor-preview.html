@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head><style>
-body { background: #16161A; padding: 60px; font-family: system-ui; color: white; }
-.row { display: flex; gap: 80px; align-items: center; margin-bottom: 40px; }
-.cell { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-img { width: 96px; height: 96px; image-rendering: -webkit-optimize-contrast; background: #2a2a2a; padding: 12px; border-radius: 8px; }
-.label { font-size: 13px; color: #86868B; letter-spacing: 0.1em; text-transform: uppercase; }
+body { background: #16161A; padding: 40px; font-family: system-ui; color: white; margin: 0; }
+.row { display: flex; gap: 60px; align-items: flex-end; }
+.cell { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+img { width: 120px; height: 120px; image-rendering: -webkit-optimize-contrast; background: #2a2a2a; padding: 12px; border-radius: 12px; }
+.actual { width: 48px; height: 48px; background: #2a2a2a; padding: 6px; border-radius: 6px; }
+.label { font-size: 12px; color: #86868B; letter-spacing: 0.1em; text-transform: uppercase; }
+.size { font-size: 11px; color: #555; }
 </style></head>
 <body>
+  <h2 style="font-weight:300;font-size:20px">3 curseurs custom — preview</h2>
   <div class="row">
-    <div class="cell"><img src="/cursors/cursor-default.svg" /><div class="label">Default (arrow)</div></div>
-    <div class="cell"><img src="/cursors/cursor-hand-open.svg" /><div class="label">Hand open</div></div>
-    <div class="cell"><img src="/cursors/cursor-hand-point.svg" /><div class="label">Hand point</div></div>
+    <div class="cell">
+      <img src="/cursors/cursor-open.svg" />
+      <img src="/cursors/cursor-open.svg" class="actual" />
+      <div class="label">cursor-open</div>
+      <div class="size">main ouverte</div>
+    </div>
+    <div class="cell">
+      <img src="/cursors/cursor-pointer.svg" />
+      <img src="/cursors/cursor-pointer.svg" class="actual" />
+      <div class="label">cursor-pointer</div>
+      <div class="size">main qui pointe</div>
+    </div>
+    <div class="cell">
+      <img src="/cursors/cursor-arrow.svg" />
+      <img src="/cursors/cursor-arrow.svg" class="actual" />
+      <div class="label">cursor-arrow</div>
+      <div class="size">flèche</div>
+    </div>
   </div>
 </body>
 </html>

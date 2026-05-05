@@ -8,22 +8,24 @@ const CLICKABLE_SELECTOR =
   'a[href], button, [role="button"], label, input[type="checkbox"], input[type="radio"], select, summary, .btn, [data-cursor="point"]';
 
 const SRC: Record<CursorType, string> = {
-  default: '/cursors/cursor-default.svg',
-  open: '/cursors/cursor-hand-open.svg',
-  point: '/cursors/cursor-hand-point.svg',
+  default: '/cursors/cursor-arrow.svg',
+  open: '/cursors/cursor-open.svg',
+  point: '/cursors/cursor-pointer.svg',
 };
 
-// Hotspot offsets (in image px) so the visual "tip" sits exactly on the pointer.
+// Hotspot offsets (in displayed px) so the visual "action point" sits exactly
+// on the OS pointer location. Values are scaled from the 48x48 viewBox to
+// the displayed size below.
 const HOTSPOT: Record<CursorType, { x: number; y: number }> = {
-  default: { x: 3, y: 2 },   // arrow tip
-  open: { x: 20, y: 2 },     // middle finger top
-  point: { x: 13, y: 1 },    // index fingertip
+  default: { x: 4, y: 3 },     // arrow tip (viewBox 6,4 → 30/48 scale)
+  open: { x: 24, y: 2 },       // middle finger tip (viewBox 30,2 → 38/48 scale)
+  point: { x: 14, y: 1 },      // index fingertip (viewBox 19.7,1 → 34/48 scale)
 };
 
 const SIZE: Record<CursorType, { w: number; h: number }> = {
-  default: { w: 28, h: 28 },
-  open: { w: 36, h: 36 },
-  point: { w: 30, h: 34 },
+  default: { w: 30, h: 30 },
+  open: { w: 38, h: 38 },
+  point: { w: 34, h: 38 },
 };
 
 export function CustomCursor() {

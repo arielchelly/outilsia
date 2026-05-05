@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+  <!-- Pointing hand: index up + 3 curled fingers as bumps + rounded fist -->
+  <path
+    d="M 16 4
+       C 16 2.3 17.3 1 19 1
+       L 20.5 1
+       C 22.2 1 23.5 2.3 23.5 4
+       L 23.5 22
+       L 25.4 22
+       L 25.4 17.5
+       C 25.4 16 26.4 15 27.9 15
+       L 29 15
+       C 30.5 15 31.5 16 31.5 17.5
+       L 31.5 22
+       L 33.4 22
+       L 33.4 19.5
+       C 33.4 18 34.4 17 35.9 17
+       L 37 17
+       C 38.5 17 39.5 18 39.5 19.5
+       L 39.5 35
+       C 39.5 41.5 34 46 27 46
+       L 21 46
+       C 13.5 46 8 41.5 8 35
+       L 8 27
+       L 12.5 31.5
+       C 15 34 17 32.5 17 29.5
+       L 17 23.5
+       Z"
+    fill="#FFF"
+    stroke="#000"
+    stroke-width="2.6"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+  <!-- Joint marks where the curled fingers meet the fist -->
+  <line x1="24.5" y1="22" x2="25.4" y2="22" stroke="#000" stroke-width="2" stroke-linecap="round" />
+  <line x1="32.5" y1="22" x2="33.4" y2="22" stroke="#000" stroke-width="2" stroke-linecap="round" />
+</svg>
