@@ -91,10 +91,27 @@
     background-size: 200px 200px;
   }
 
-  /* Hide native cursor when custom Apple-style cursor is mounted (fine pointers only). */
-  html.has-custom-cursor,
-  html.has-custom-cursor * {
-    cursor: none !important;
+  /* macOS-style cursors (black fill / white outline). Auto only on fine pointers
+     so touch devices keep native behaviour. */
+  @media (pointer: fine) {
+    html, body {
+      cursor: url('/cursors/arrow.svg') 3 2, default;
+    }
+    a, button, [role="button"], summary, label[for], select,
+    [data-cursor="hover"], .group:hover {
+      cursor: url('/cursors/pointer.svg') 11 1, pointer;
+    }
+    [draggable="true"], [data-cursor="grab"] {
+      cursor: url('/cursors/grab.svg') 14 14, grab;
+    }
+    input[type="text"], input[type="email"], input[type="search"],
+    input[type="url"], input[type="number"], input[type="password"],
+    textarea, [contenteditable="true"] {
+      cursor: text;
+    }
+    button:disabled, [aria-disabled="true"] {
+      cursor: not-allowed;
+    }
   }
 }
 

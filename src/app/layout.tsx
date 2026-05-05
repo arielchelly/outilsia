@@ -7,7 +7,6 @@ import { SiteFooter } from '@/components/site-footer';
 import { CookieBanner } from '@/components/cookie-banner';
 import { GlobalMouseGlow } from '@/components/global-mouse-glow';
 import { SmoothScroll } from '@/components/smooth-scroll';
-import { CustomCursor } from '@/components/custom-cursor';
 import { Toaster } from '@/components/ui/toaster';
 import { SITE_NAME, SITE_URL } from '@/lib/data';
 import './globals.css';
@@ -146,7 +145,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <SmoothScroll />
         <GlobalMouseGlow />
-        <CustomCursor />
         <SiteHeader />
         <main className="relative z-10">{children}</main>
         <SiteFooter />
