@@ -39,15 +39,24 @@ export default async function ArticlePage({ params }: Props) {
 
   const categoryMeta = CATEGORIES[article.related_category as keyof typeof CATEGORIES];
 
+  const pageUrl = `${SITE_URL}/blog/${slug}`;
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    '@id': `${pageUrl}#article`,
     headline: article.title,
-    author: { '@type': 'Organization', name: 'TopOutils.IA' },
-    publisher: { '@type': 'Organization', name: 'TopOutils.IA' },
+    description: article.description,
+    author: { '@type': 'Organization', name: 'TopOutils.IA', url: SITE_URL },
+    publisher: { '@id': `${SITE_URL}/#organization` },
     datePublished: article.date_published,
     dateModified: article.date_modified,
-    description: article.description,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+    image: `${SITE_URL}/og-default.png`,
+    inLanguage: 'fr-FR',
+    articleSection: article.category_label || article.category,
+    wordCount: article.content?.split(/\s+/).length ?? 0,
+    timeRequired: `PT${article.reading_time}M`,
+    keywords: [article.category_label, article.category, 'IA', 'comparatif'].filter(Boolean).join(', '),
   };
   const faqSchema = article.faqs?.length
     ? {
@@ -66,7 +75,7 @@ export default async function ArticlePage({ params }: Props) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE_URL}/` },
       { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
-      { '@type': 'ListItem', position: 3, name: article.title, item: `${SITE_URL}/blog/${slug}` },
+      { '@type': 'ListItem', position: 3, name: article.title, item: pageUrl },
     ],
   };
 

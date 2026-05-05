@@ -10,15 +10,15 @@ export function FinalCTA() {
     <section className="py-32 relative">
       <div className="container">
         <Reveal>
-          <div className="relative max-w-5xl mx-auto rounded-[2rem] overflow-hidden border border-[rgba(232,200,120,0.18)]">
+          <div className="relative max-w-5xl mx-auto rounded-[2rem] overflow-hidden border border-[rgba(216, 139, 106,0.18)]">
             {/* Animated gradient bg */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,200,120,0.06)] via-transparent to-[rgba(94,234,182,0.04)]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[rgba(216, 139, 106,0.06)] via-transparent to-[rgba(148, 168, 140,0.04)]" />
             <div
               aria-hidden="true"
               className="absolute -top-1/2 -right-1/4 w-[700px] h-[700px] rounded-full opacity-30"
               style={{
                 background:
-                  'radial-gradient(circle, rgba(232,200,120,0.18) 0%, rgba(232,200,120,0) 60%)',
+                  'radial-gradient(circle, rgba(216, 139, 106,0.18) 0%, rgba(216, 139, 106,0) 60%)',
                 filter: 'blur(40px)',
               }}
             />
@@ -27,7 +27,7 @@ export function FinalCTA() {
               className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] rounded-full opacity-20"
               style={{
                 background:
-                  'radial-gradient(circle, rgba(94,234,182,0.18) 0%, rgba(94,234,182,0) 60%)',
+                  'radial-gradient(circle, rgba(148, 168, 140,0.18) 0%, rgba(148, 168, 140,0) 60%)',
                 filter: 'blur(40px)',
               }}
             />
@@ -46,7 +46,7 @@ export function FinalCTA() {
 
             <div className="relative px-8 py-16 md:px-16 md:py-24 text-center">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-elevated/60 backdrop-blur border border-white/10 rounded-full text-[0.72rem] uppercase tracking-[0.2em] text-gold mb-8">
-                <span className="w-1.5 h-1.5 rounded-full bg-mint shadow-[0_0_10px_#5EEAB6]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-mint shadow-[0_0_10px_#94A88C]" />
                 Mis à jour en mai 2026
               </span>
 

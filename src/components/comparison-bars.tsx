@@ -82,8 +82,8 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
                 className={cn(
                   'px-4 py-2 rounded-full text-[0.78rem] uppercase tracking-[0.12em] font-medium transition-all whitespace-nowrap',
                   active
-                    ? 'bg-gold text-void shadow-[0_4px_18px_rgba(232,200,120,0.3)]'
-                    : 'bg-white/[0.02] text-muted-foreground border border-white/[0.06] hover:border-[rgba(232,200,120,0.3)] hover:text-gold'
+                    ? 'bg-gold text-void shadow-[0_4px_18px_rgba(216, 139, 106,0.3)]'
+                    : 'bg-white/[0.02] text-muted-foreground border border-white/[0.06] hover:border-[rgba(216, 139, 106,0.3)] hover:text-gold'
                 )}
               >
                 {d.short}
@@ -102,13 +102,13 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
           <div className="flex gap-2 text-[0.72rem]">
             <button
               onClick={() => selectTopN(5)}
-              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(232,200,120,0.3)] transition uppercase tracking-wider"
+              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(216, 139, 106,0.3)] transition uppercase tracking-wider"
             >
               Top 5
             </button>
             <button
               onClick={selectAll}
-              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(232,200,120,0.3)] transition uppercase tracking-wider"
+              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(216, 139, 106,0.3)] transition uppercase tracking-wider"
             >
               Tous
             </button>
@@ -130,7 +130,7 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
                 className={cn(
                   'group inline-flex items-center gap-2.5 pl-2 pr-3.5 py-1.5 rounded-full border transition-all',
                   isOn
-                    ? 'bg-[rgba(232,200,120,0.10)] border-[rgba(232,200,120,0.4)] text-foreground'
+                    ? 'bg-[rgba(216, 139, 106,0.10)] border-[rgba(216, 139, 106,0.4)] text-foreground'
                     : 'bg-white/[0.02] border-white/[0.06] text-muted-foreground/70 hover:border-white/15 hover:text-foreground'
                 )}
               >
@@ -145,7 +145,7 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#080B14"
+                      stroke="#15090E"
                       strokeWidth={3}
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -194,7 +194,7 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
                       className={cn(
                         'group grid items-center gap-4 px-4 py-4 rounded-2xl border cursor-default',
                         'border-white/[0.06] bg-white/[0.015] hover:border-white/15 hover:bg-white/[0.04]',
-                        isLeader && 'border-[rgba(232,200,120,0.3)] bg-[rgba(232,200,120,0.025)]',
+                        isLeader && 'border-[rgba(216, 139, 106,0.3)] bg-[rgba(216, 139, 106,0.025)]',
                         isDimmed && 'opacity-40'
                       )}
                       style={{
@@ -222,7 +222,7 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
                               {tool.name}
                             </span>
                             {isLeader && (
-                              <span className="text-[0.62rem] uppercase tracking-[0.15em] text-gold font-medium px-1.5 py-0.5 bg-[rgba(232,200,120,0.1)] border border-[rgba(232,200,120,0.25)] rounded-full whitespace-nowrap">
+                              <span className="text-[0.62rem] uppercase tracking-[0.15em] text-gold font-medium px-1.5 py-0.5 bg-[rgba(216, 139, 106,0.1)] border border-[rgba(216, 139, 106,0.25)] rounded-full whitespace-nowrap">
                                 Leader
                               </span>
                             )}
@@ -249,7 +249,7 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
                             className={cn(
                               'absolute left-0 top-0 h-full rounded-full',
                               isLeader
-                                ? 'bg-gradient-to-r from-gold via-amber to-gold-deep shadow-[0_0_18px_rgba(232,200,120,0.4)]'
+                                ? 'bg-gradient-to-r from-gold via-amber to-gold-deep shadow-[0_0_18px_rgba(216, 139, 106,0.4)]'
                                 : 'bg-gradient-to-r from-white/35 to-white/15'
                             )}
                             initial={{ width: 0 }}

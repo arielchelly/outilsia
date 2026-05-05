@@ -11,9 +11,9 @@ export function Toaster() {
       closeButton
       toastOptions={{
         style: {
-          background: '#0D111B',
-          color: '#F0F4FF',
-          border: '1px solid rgba(232, 200, 120, 0.25)',
+          background: '#211119',
+          color: '#F2EAD9',
+          border: '1px solid rgba(216, 139, 106, 0.25)',
           fontFamily: 'var(--font-body)',
         },
       }}

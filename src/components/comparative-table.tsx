@@ -226,7 +226,7 @@ function FilterChip({
       className={cn(
         'px-3.5 py-1.5 border rounded-full text-[0.78rem] transition',
         active
-          ? 'bg-[rgba(232,200,120,0.15)] text-gold border-[rgba(232,200,120,0.3)]'
+          ? 'bg-[rgba(216, 139, 106,0.15)] text-gold border-[rgba(216, 139, 106,0.3)]'
           : 'border-white/15 text-muted-foreground hover:border-gold hover:text-gold'
       )}
     >

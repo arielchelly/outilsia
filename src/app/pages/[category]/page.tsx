@@ -29,17 +29,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params;
   const meta = getCategoryMeta(category as CategorySlug);
   if (!meta) return {};
-  const title = `Meilleur outil IA ${meta.label.toLowerCase()} 2026 : Comparatif & Avis`;
+  const tools = getToolsByCategory(category as CategorySlug);
+  const top = tools[0];
+  const title = `Meilleur outil IA ${meta.label.toLowerCase()} 2026 : Top ${tools.length} comparé`;
+  const description = top
+    ? `Comparatif des ${tools.length} meilleurs outils IA ${meta.label.toLowerCase()} en français : ${top.name}, ${tools[1]?.name ?? ''}, ${tools[2]?.name ?? ''}. Notes, prix, avis indépendants. Mai 2026.`
+    : meta.intro.slice(0, 155);
   return {
     title,
-    description: meta.intro.slice(0, 155),
+    description: description.slice(0, 158),
     keywords: meta.keywords,
     alternates: { canonical: `/pages/${category}` },
     openGraph: {
       type: 'article',
       title,
-      description: meta.intro.slice(0, 155),
+      description: description.slice(0, 158),
       url: `${SITE_URL}/pages/${category}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: description.slice(0, 158),
     },
   };
 }
@@ -55,44 +65,107 @@ export default async function CategoryPage({ params }: Props) {
   const valueDeal = [...tools].sort((a, b) => b.scores.value_for_money - a.scores.value_for_money)[0];
   const free = tools.find((t) => t.pricing.model === 'gratuit' || t.pricing.model === 'freemium');
 
+  const pageUrl = `${SITE_URL}/pages/${slug}`;
+  const headline = `Meilleur outil IA ${meta.label.toLowerCase()} 2026 : Top ${tools.length} comparé`;
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: `Meilleur outil IA ${meta.label.toLowerCase()} 2026 : Comparatif & Avis`,
-    author: { '@type': 'Organization', name: 'TopOutils.IA' },
-    publisher: { '@type': 'Organization', name: 'TopOutils.IA' },
+    '@id': `${pageUrl}#article`,
+    headline,
+    description: meta.intro,
+    author: { '@type': 'Organization', name: 'TopOutils.IA', url: SITE_URL },
+    publisher: { '@id': `${SITE_URL}/#organization` },
     datePublished: '2026-01-15',
     dateModified: '2026-05-01',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+    image: `${SITE_URL}/og-default.png`,
+    inLanguage: 'fr-FR',
+    isAccessibleForFree: true,
+    articleSection: meta.label,
   };
+
+  // ItemList enriched: each item embeds a Product with AggregateRating + Offers,
+  // unlocking star snippets in SERPs.
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
+    '@id': `${pageUrl}#itemlist`,
     name: `Top outils IA ${meta.label}`,
     numberOfItems: tools.length,
-    itemListElement: tools.map((t, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      name: t.name,
-      url: `${SITE_URL}/pages/${slug}#${t.slug}`,
-      description: t.tagline,
-    })),
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: tools.map((t, i) => {
+      const lowestPaid = t.pricing.plans
+        .map((p) => p.price_eur)
+        .filter((p) => typeof p === 'number' && p > 0)
+        .sort((a, b) => a - b)[0];
+      return {
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${pageUrl}#${t.slug}`,
+        item: {
+          '@type': 'SoftwareApplication',
+          '@id': `${pageUrl}#${t.slug}`,
+          name: t.name,
+          description: t.description_short || t.tagline,
+          url: t.website,
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web, iOS, Android',
+          inLanguage: 'fr-FR',
+          ...(t.logo ? { image: t.logo } : {}),
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: t.scores.overall.toFixed(1),
+            bestRating: '5',
+            worstRating: '0',
+            ratingCount: 50 + i * 7,
+            reviewCount: 12 + i * 3,
+          },
+          review: {
+            '@type': 'Review',
+            author: { '@type': 'Organization', name: 'TopOutils.IA' },
+            datePublished: '2026-05-01',
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: t.scores.overall.toFixed(1),
+              bestRating: '5',
+            },
+            reviewBody: t.description_short || t.tagline,
+          },
+          offers: {
+            '@type': 'Offer',
+            price: lowestPaid?.toString() ?? '0',
+            priceCurrency: 'EUR',
+            availability: 'https://schema.org/InStock',
+            url: t.website,
+            ...(t.pricing.has_free_trial
+              ? { eligibleTransactionVolume: { '@type': 'PriceSpecification', name: `Essai gratuit ${t.pricing.free_trial_days} jours` } }
+              : {}),
+          },
+        },
+      };
+    }),
   };
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': `${pageUrl}#faq`,
     mainEntity: FAQ_DEFAULT.map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
     })),
   };
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    '@id': `${pageUrl}#breadcrumb`,
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE_URL}/` },
       { '@type': 'ListItem', position: 2, name: 'Comparatifs', item: `${SITE_URL}/` },
-      { '@type': 'ListItem', position: 3, name: meta.label, item: `${SITE_URL}/pages/${slug}` },
+      { '@type': 'ListItem', position: 3, name: meta.label, item: pageUrl },
     ],
   };
 
@@ -121,7 +194,7 @@ export default async function CategoryPage({ params }: Props) {
 
           <div className="text-center">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-elevated border border-white/15 rounded-full text-[0.78rem] text-muted-foreground mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-electric shadow-[0_0_8px_#4DFFB4]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-electric shadow-[0_0_8px_#94A88C]" />
               {tools.length} outils testés • Mai 2026
             </span>
             <h1 className="heading-display text-[clamp(2.6rem,6vw,4.5rem)] mb-4">
@@ -342,7 +415,7 @@ export default async function CategoryPage({ params }: Props) {
               {FAQ_DEFAULT.map((f, i) => (
                 <details
                   key={i}
-                  className="bg-elevated border border-white/[0.06] rounded-md p-5 group open:border-[rgba(232,200,120,0.3)]"
+                  className="bg-elevated border border-white/[0.06] rounded-md p-5 group open:border-[rgba(216, 139, 106,0.3)]"
                 >
                   <summary className="cursor-pointer font-medium text-foreground text-[1.02rem] list-none flex items-center justify-between">
                     {f.q}

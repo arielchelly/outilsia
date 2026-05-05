@@ -1,15 +1,38 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_NAME, SITE_URL } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'À propos',
-  description: 'Qui sommes-nous, comment nous testons les outils IA, mentions légales, cookies et contact.',
+  title: 'À propos — Notre charte et méthode de test',
+  description:
+    "Qui sommes-nous, comment nous testons les outils IA pendant 30 jours, notre charte d'indépendance, mentions légales, cookies et contact.",
   alternates: { canonical: '/about' },
+  openGraph: {
+    type: 'article',
+    title: `À propos | ${SITE_NAME}`,
+    description: "Charte éditoriale, méthode de test 30 jours, indépendance.",
+    url: `${SITE_URL}/about`,
+  },
+};
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  '@id': `${SITE_URL}/about#aboutpage`,
+  url: `${SITE_URL}/about`,
+  name: `À propos de ${SITE_NAME}`,
+  description: 'Charte éditoriale, méthode de test, indépendance et mentions légales.',
+  mainEntity: { '@id': `${SITE_URL}/#organization` },
+  inLanguage: 'fr-FR',
 };
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       <section className="pt-[calc(72px+3rem)] pb-12">
         <div className="container-narrow">
           <div className="text-center mb-16">

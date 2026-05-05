@@ -54,9 +54,9 @@ export function Newsletter({
   return (
     <div
       id="newsletter"
-      className="relative max-w-3xl mx-auto bg-elevated border border-[rgba(232,200,120,0.3)] rounded-3xl p-12 text-center overflow-hidden"
+      className="relative max-w-3xl mx-auto bg-elevated border border-[rgba(216, 139, 106,0.3)] rounded-3xl p-12 text-center overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,200,120,0.12),transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(216, 139, 106,0.12),transparent_70%)] pointer-events-none" />
 
       <div className="relative">
         <div className="w-14 h-14 mx-auto text-gold mb-4">

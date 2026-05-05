@@ -16,7 +16,7 @@ export function TopToolCard({ tool, rank, isFirst }: { tool: Tool; rank: number;
         'relative rounded-2xl p-8 grid items-center gap-8 overflow-hidden border transition-all',
         'grid-cols-1 lg:grid-cols-[auto_1fr_auto]',
         isFirst
-          ? 'border-[rgba(232,200,120,0.3)] bg-gradient-to-br from-elevated to-surface shadow-[0_0_60px_rgba(232,200,120,0.08)]'
+          ? 'border-[rgba(216, 139, 106,0.3)] bg-gradient-to-br from-elevated to-surface shadow-[0_0_60px_rgba(216, 139, 106,0.08)]'
           : 'bg-surface border-white/[0.06] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
       )}
     >

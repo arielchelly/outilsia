@@ -25,24 +25,34 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        // Brand — refined palette
-        // Gold: primary luxe accent. Amber: warm secondary for hovers / highlights.
-        // Mint: cool punctuation for CTAs. Coral: errors / negative.
+        // Brand — "Maison" editorial palette.
+        // Replaces the cold gold-on-blue-black "AI default" look with a warm
+        // press/wine-cellar register: terracotta + cream + deep bordeaux + sage.
+        // Class name `gold` is preserved (it now maps to terracotta) so existing
+        // components keep working.
         gold: {
-          DEFAULT: '#E8C878',
-          deep: '#C9A84C',
-          bright: '#F2D78C',
+          DEFAULT: '#D88B6A',   // terracotta — primary accent
+          deep: '#A85A3D',       // burnt sienna
+          bright: '#E8A483',     // peach pink (hover)
         },
-        amber: '#F0A848',
-        mint: '#5EEAB6',
-        electric: '#5EEAB6',
-        coral: '#FF6B6B',
-        sky: '#9BC4FF',
-        // Backgrounds — nearly identical for visual unity.
-        void: '#080B14',
-        surface: '#0A0D16',
-        elevated: '#0D111B',
-        overlay: '#141925',
+        terracotta: {
+          DEFAULT: '#D88B6A',
+          deep: '#A85A3D',
+          bright: '#E8A483',
+        },
+        cream: '#F2EAD9',         // parchment text on dark
+        bordeaux: '#6B1B2E',      // deep wine
+        sage: '#94A88C',          // muted green — replaces electric/mint
+        amber: '#E8A66A',         // warm amber
+        mint: '#94A88C',          // alias → sage
+        electric: '#94A88C',      // alias → sage
+        coral: '#C45A52',         // muted coral
+        sky: '#B8A89B',           // warm taupe — replaces cold sky
+        // Backgrounds — warm wine/plum register, nearly identical for unity.
+        void: '#15090E',          // deep aubergine-noir
+        surface: '#1A0D13',       // wine-noir
+        elevated: '#211119',      // muted plum
+        overlay: '#2B1822',       // dusty bordeaux
       },
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],

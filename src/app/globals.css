@@ -4,49 +4,56 @@
 
 @layer base {
   :root {
-    /* shadcn semantic tokens (dark scheme — backgrounds nearly identical for visual unity) */
-    --background: 220 43% 5%;        /* #080B14 — page bg */
-    --foreground: 222 60% 96%;
-    --card: 220 38% 6%;              /* ~#0A0D16 — barely lighter than bg */
-    --card-foreground: 222 60% 96%;
-    --popover: 220 35% 8%;           /* ~#0D111B */
-    --popover-foreground: 222 60% 96%;
-    --primary: 41 67% 69%;
-    --primary-foreground: 220 43% 5%;
-    --secondary: 222 18% 11%;
-    --secondary-foreground: 222 60% 96%;
-    --muted: 222 18% 13%;
-    --muted-foreground: 222 15% 60%;
-    --accent: 41 67% 69%;
-    --accent-foreground: 220 43% 5%;
-    --destructive: 0 100% 71%;
-    --destructive-foreground: 222 60% 96%;
-    --border: 220 30% 18%;
-    --input: 220 30% 16%;
-    --ring: 41 67% 69%;
+    /* shadcn semantic tokens — "Maison" editorial palette
+       (warm wine/plum backgrounds + terracotta accent + cream text) */
+    --background: 339 26% 6%;        /* #15090E — deep aubergine-noir */
+    --foreground: 38 56% 90%;        /* #F2EAD9 — parchment */
+    --card: 340 33% 8%;              /* #1A0D13 — wine-noir */
+    --card-foreground: 38 56% 90%;
+    --popover: 339 33% 10%;          /* #211119 */
+    --popover-foreground: 38 56% 90%;
+    --primary: 18 58% 63%;           /* #D88B6A — terracotta */
+    --primary-foreground: 339 26% 6%;
+    --secondary: 339 22% 12%;
+    --secondary-foreground: 38 56% 90%;
+    --muted: 339 22% 14%;
+    --muted-foreground: 30 18% 64%;  /* warm taupe */
+    --accent: 18 58% 63%;
+    --accent-foreground: 339 26% 6%;
+    --destructive: 6 50% 56%;
+    --destructive-foreground: 38 56% 90%;
+    --border: 339 18% 20%;
+    --input: 339 18% 18%;
+    --ring: 18 58% 63%;
     --radius: 0.75rem;
 
-    /* Brand tokens (utility) */
-    --gold: #E8C878;
-    --gold-deep: #C9A84C;
-    --gold-glow: rgba(232, 200, 120, 0.15);
-    --electric: #4DFFB4;
-    --coral: #FF6B6B;
-    --sky: #7EB3FF;
+    /* Brand tokens (utility) — `--gold` name kept for component compat,
+       it now resolves to the terracotta accent. */
+    --gold: #D88B6A;
+    --gold-deep: #A85A3D;
+    --gold-bright: #E8A483;
+    --gold-glow: rgba(216, 139, 106, 0.18);
+    --terracotta: #D88B6A;
+    --bordeaux: #6B1B2E;
+    --sage: #94A88C;
+    --electric: #94A88C;       /* alias kept for legacy refs */
+    --coral: #C45A52;
+    --sky: #B8A89B;            /* warm taupe (replaces cold sky) */
+    --cream: #F2EAD9;
 
-    /* Backgrounds — nearly identical to keep page feeling uniform */
-    --bg-void: #080B14;
-    --bg-surface: #0A0D16;
-    --bg-elevated: #0D111B;
-    --bg-overlay: #141925;
+    /* Backgrounds — warm wine register, nearly identical for visual unity */
+    --bg-void: #15090E;
+    --bg-surface: #1A0D13;
+    --bg-elevated: #211119;
+    --bg-overlay: #2B1822;
 
-    --text-primary: #F0F4FF;
-    --text-secondary: #8892A4;
-    --text-muted: #4A5568;
+    --text-primary: #F2EAD9;   /* cream */
+    --text-secondary: #B8A89B; /* warm taupe */
+    --text-muted: #6B5A52;
 
-    --border-subtle: rgba(255, 255, 255, 0.06);
-    --border-medium: rgba(255, 255, 255, 0.12);
-    --border-gold: rgba(232, 200, 120, 0.3);
+    --border-subtle: rgba(242, 234, 217, 0.06);
+    --border-medium: rgba(242, 234, 217, 0.12);
+    --border-gold: rgba(216, 139, 106, 0.3);
   }
 
   * {
@@ -131,7 +138,7 @@
     width: 1400px;
     max-width: 100%;
     height: 1100px;
-    background: radial-gradient(ellipse at center, rgba(232, 200, 120, 0.07) 0%, rgba(232, 200, 120, 0.03) 35%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(216, 139, 106, 0.09) 0%, rgba(216, 139, 106, 0.035) 35%, transparent 70%);
     pointer-events: none;
   }
 }
@@ -175,8 +182,8 @@
 .article-prose ul li { list-style: disc; margin-bottom: 0.5rem; }
 .article-prose ol li { list-style: decimal; margin-bottom: 0.5rem; }
 .article-prose strong { color: var(--text-primary); }
-.article-prose a { color: var(--sky); text-decoration: underline; text-underline-offset: 3px; }
-.article-prose a:hover { color: var(--gold); }
+.article-prose a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(216, 139, 106, 0.4); }
+.article-prose a:hover { color: var(--gold-bright); text-decoration-color: var(--gold-bright); }
 .article-prose table {
   width: 100%;
   margin: 1.5rem 0;

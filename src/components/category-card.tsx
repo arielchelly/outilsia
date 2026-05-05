@@ -43,7 +43,7 @@ export function CategoryCard({ slug, label, description, toolCount, isFeature, c
       onMouseLeave={onLeave}
       className={cn(
         'group relative overflow-hidden rounded-3xl border border-white/[0.06] transition-colors duration-500 block',
-        'hover:border-[rgba(232,200,120,0.3)]',
+        'hover:border-[rgba(216, 139, 106,0.3)]',
         'bg-white/[0.015]',
         isFeature ? 'min-h-[280px] p-8' : 'min-h-[180px] p-6',
         'flex flex-col justify-between h-full',
@@ -62,7 +62,7 @@ export function CategoryCard({ slug, label, description, toolCount, isFeature, c
           left: mouse.x ?? 0,
           top: mouse.y ?? 0,
           background:
-            'radial-gradient(circle at center, rgba(232,200,120,0.18) 0%, rgba(232,200,120,0.04) 40%, rgba(232,200,120,0) 70%)',
+            'radial-gradient(circle at center, rgba(216, 139, 106,0.18) 0%, rgba(216, 139, 106,0.04) 40%, rgba(216, 139, 106,0) 70%)',
           maskImage: `radial-gradient(${circleSize / 2}px circle at center, white, transparent)`,
         }}
       />
@@ -72,7 +72,7 @@ export function CategoryCard({ slug, label, description, toolCount, isFeature, c
 
       {/* Featured badge */}
       {isFeature && (
-        <span className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 px-2.5 py-1 bg-[rgba(232,200,120,0.12)] border border-[rgba(232,200,120,0.3)] text-gold rounded-full text-[0.65rem] uppercase tracking-[0.12em] font-medium">
+        <span className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 px-2.5 py-1 bg-[rgba(216, 139, 106,0.12)] border border-[rgba(216, 139, 106,0.3)] text-gold rounded-full text-[0.65rem] uppercase tracking-[0.12em] font-medium">
           <span className="w-1 h-1 rounded-full bg-gold" />
           Populaire
         </span>

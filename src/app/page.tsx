@@ -39,7 +39,7 @@ export default function HomePage() {
             {/* Left content */}
             <div className="relative z-10 flex flex-col justify-center py-8">
               <span className="inline-flex items-center gap-2 self-start px-4 py-2 bg-elevated/60 backdrop-blur border border-white/15 rounded-full text-[0.78rem] text-muted-foreground mb-8 animate-fade-in">
-                <span className="w-1.5 h-1.5 rounded-full bg-electric shadow-[0_0_8px_#4DFFB4] animate-pulse-blink" />
+                <span className="w-1.5 h-1.5 rounded-full bg-electric shadow-[0_0_8px_#94A88C] animate-pulse-blink" />
                 {toolsMeta.total} outils testés • Mis à jour mai 2026
               </span>
 

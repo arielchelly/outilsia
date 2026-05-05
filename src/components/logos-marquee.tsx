@@ -57,7 +57,7 @@ function Marquee({ items, duration, direction }: MarqueeProps) {
         {doubled.map((brand, i) => (
           <li
             key={`${brand.domain}-${i}`}
-            className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm transition-colors hover:border-[rgba(232,200,120,0.25)] hover:bg-white/[0.04]"
+            className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm transition-colors hover:border-[rgba(216, 139, 106,0.25)] hover:bg-white/[0.04]"
           >
             <span className="w-8 h-8 rounded-md bg-white overflow-hidden flex items-center justify-center flex-shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -78,8 +78,8 @@ function Marquee({ items, duration, direction }: MarqueeProps) {
                     img.style.display = 'none';
                     const parent = img.parentElement;
                     if (parent) {
-                      parent.style.background = 'linear-gradient(135deg, #E8C878, #C9A84C)';
-                      parent.innerHTML = `<span style="font-family:var(--font-display);color:#080B14;font-weight:600;font-size:0.95rem">${brand.name.charAt(0)}</span>`;
+                      parent.style.background = 'linear-gradient(135deg, #D88B6A, #A85A3D)';
+                      parent.innerHTML = `<span style="font-family:var(--font-display);color:#15090E;font-weight:600;font-size:0.95rem">${brand.name.charAt(0)}</span>`;
                     }
                   }
                 }}

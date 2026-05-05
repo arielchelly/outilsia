@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import { ArticleCard } from '@/components/article-card';
 import { Reveal } from '@/components/ui/reveal';
-import { allArticles } from '@/lib/data';
+import { SITE_NAME, SITE_URL, allArticles } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'Blog — Tous les articles',
-  description: 'Articles, guides et comparatifs sur les outils IA en français.',
+  title: 'Blog IA — Guides, comparatifs et analyses',
+  description:
+    "Tous nos articles : guides d'achat IA, comparatifs détaillés, analyses du marché de l'intelligence artificielle en français. Mis à jour chaque semaine.",
   alternates: { canonical: '/blog' },
+  openGraph: {
+    type: 'website',
+    title: `Blog | ${SITE_NAME}`,
+    description: 'Guides, comparatifs et analyses IA en français.',
+    url: `${SITE_URL}/blog`,
+  },
 };
 
 export default function BlogIndexPage() {
@@ -14,8 +21,33 @@ export default function BlogIndexPage() {
     (a, b) => +new Date(b.date_published) - +new Date(a.date_published)
   );
 
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${SITE_URL}/blog#collection`,
+    url: `${SITE_URL}/blog`,
+    name: `Blog ${SITE_NAME}`,
+    description: 'Articles, guides et comparatifs sur les outils IA en français.',
+    inLanguage: 'fr-FR',
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: sorted.length,
+      itemListElement: sorted.map((a, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE_URL}/blog/${a.slug}`,
+        name: a.title,
+      })),
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       <section className="pt-[calc(72px+3rem)] pb-12 relative overflow-hidden">
         <div className="hero-glow" aria-hidden="true" />
         <div className="container-narrow text-center relative">

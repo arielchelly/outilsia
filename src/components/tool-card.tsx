@@ -36,7 +36,7 @@ export function ToolCard({ tool, index }: Props) {
       id={tool.slug}
       className={cn(
         'bg-surface border rounded-2xl p-8 mb-6 scroll-mt-24 transition-colors',
-        tool.is_recommended ? 'border-[rgba(232,200,120,0.3)] shadow-[0_0_50px_rgba(232,200,120,0.05)]' : 'border-white/[0.06] hover:border-white/[0.12]'
+        tool.is_recommended ? 'border-[rgba(216, 139, 106,0.3)] shadow-[0_0_50px_rgba(216, 139, 106,0.05)]' : 'border-white/[0.06] hover:border-white/[0.12]'
       )}
     >
       <div className="flex items-start gap-6 pb-6 border-b border-white/[0.06] flex-wrap">

@@ -20,20 +20,21 @@ interface Props {
   tools: Tool[];
 }
 
-// Distinct, vivid color palette for the lines.
+// Warm editorial palette — terracotta family + accents that harmonise on
+// wine-noir background. Distinct enough for a 12-line chart, no neon.
 const COLORS = [
-  '#E8C878', // gold
-  '#5EEAB6', // mint
-  '#FF6B6B', // coral
-  '#9BC4FF', // sky
-  '#F0A848', // amber
-  '#B57BFF', // purple
-  '#FF9DDB', // rose
-  '#C5FF6E', // lime
-  '#5EBFEA', // ocean
-  '#FF8B5E', // orange
-  '#7BFFD4', // turquoise
-  '#FFC85E', // sun
+  '#D88B6A', // terracotta
+  '#94A88C', // sage
+  '#E8A483', // peach
+  '#B8A89B', // taupe
+  '#C45A52', // muted coral
+  '#A85A3D', // burnt sienna
+  '#D4B483', // warm sand
+  '#7E8C7A', // dusty olive
+  '#E8C9A5', // cream apricot
+  '#8B6F47', // mocha
+  '#C19778', // hazelnut
+  '#9B7B6B', // cocoa
 ];
 
 // Six dimensions on the X axis — all in the 0..5 score scale for visual coherence.
@@ -91,7 +92,7 @@ export function ComparateurGraphique({ tools }: Props) {
       selectedTools.map((t) => ({
         id: t.id,
         name: t.name,
-        color: colorMap.get(t.id) ?? '#E8C878',
+        color: colorMap.get(t.id) ?? '#D88B6A',
         scores: DIMENSIONS.reduce<Record<string, number>>((acc, d) => {
           acc[d.label] = t.scores[d.key];
           return acc;
@@ -124,7 +125,7 @@ export function ComparateurGraphique({ tools }: Props) {
             <button
               type="button"
               onClick={selectAll}
-              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(232,200,120,0.3)] transition uppercase tracking-wider"
+              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(216, 139, 106,0.3)] transition uppercase tracking-wider"
             >
               Tout cocher
             </button>
@@ -141,7 +142,7 @@ export function ComparateurGraphique({ tools }: Props) {
         <div className="flex flex-wrap gap-2">
           {sortedTools.map((tool) => {
             const isOn = selected.has(tool.id);
-            const color = colorMap.get(tool.id) ?? '#E8C878';
+            const color = colorMap.get(tool.id) ?? '#D88B6A';
             return (
               <button
                 key={tool.id}
@@ -169,7 +170,7 @@ export function ComparateurGraphique({ tools }: Props) {
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#080B14"
+                      stroke="#15090E"
                       strokeWidth={3}
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -190,7 +191,7 @@ export function ComparateurGraphique({ tools }: Props) {
       {/* Chart */}
       <div
         className="rounded-2xl border border-white/[0.06] p-4 sm:p-6 overflow-x-auto"
-        style={{ background: '#0D1117' }}
+        style={{ background: '#15090E' }}
       >
         <div className="min-w-[640px]">
           {chartTools.length === 0 ? (
@@ -207,7 +208,7 @@ export function ComparateurGraphique({ tools }: Props) {
       {selectedTools.length > 0 && (
         <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2">
           {selectedTools.map((tool) => {
-            const color = colorMap.get(tool.id) ?? '#E8C878';
+            const color = colorMap.get(tool.id) ?? '#D88B6A';
             return (
               <span
                 key={tool.id}
