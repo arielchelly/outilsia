@@ -8,13 +8,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-gradient-to-br from-gold to-gold-deep text-void font-semibold shadow-[0_4px_20px_rgba(216, 139, 106,0.25)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(216, 139, 106,0.4)]',
+          'bg-gradient-to-br from-gold to-gold-deep text-void font-semibold shadow-[0_4px_20px_rgba(212, 184, 150,0.25)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(212, 184, 150,0.4)]',
         primary:
-          'bg-gradient-to-br from-gold to-gold-deep text-void font-semibold shadow-[0_4px_20px_rgba(216, 139, 106,0.25)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(216, 139, 106,0.4)]',
+          'bg-gradient-to-br from-gold to-gold-deep text-void font-semibold shadow-[0_4px_20px_rgba(212, 184, 150,0.25)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(212, 184, 150,0.4)]',
         ghost:
-          'border border-white/15 bg-transparent text-foreground hover:border-gold hover:text-gold hover:bg-[rgba(216, 139, 106,0.08)]',
+          'border border-white/15 bg-transparent text-foreground hover:border-gold hover:text-gold hover:bg-[rgba(212, 184, 150,0.08)]',
         affiliate:
-          'bg-gradient-to-br from-gold to-gold-deep text-void font-semibold shadow-[0_4px_20px_rgba(216, 139, 106,0.25)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(216, 139, 106,0.4)] [&>span.arrow]:transition-transform hover:[&>span.arrow]:translate-x-1',
+          'bg-gradient-to-br from-gold to-gold-deep text-void font-semibold shadow-[0_4px_20px_rgba(212, 184, 150,0.25)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(212, 184, 150,0.4)] [&>span.arrow]:transition-transform hover:[&>span.arrow]:translate-x-1',
         electric:
           'bg-gradient-to-br from-electric to-[#2BCC8A] text-void font-semibold shadow-[0_4px_20px_rgba(77,255,180,0.2)] hover:-translate-y-0.5',
         link: 'text-gold underline-offset-4 hover:underline',

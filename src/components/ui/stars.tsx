@@ -31,7 +31,7 @@ function Star({ fill, half, dim }: { fill?: boolean; half?: boolean; dim: number
       <svg width={dim} height={dim} viewBox="0 0 24 24" aria-hidden="true">
         <defs>
           <linearGradient id={`half-${dim}`} x1="0" x2="1">
-            <stop offset="50%" stopColor="#D88B6A" />
+            <stop offset="50%" stopColor="#D4B896" />
             <stop offset="50%" stopColor="rgba(74,85,104,0.5)" />
           </linearGradient>
         </defs>
@@ -45,7 +45,7 @@ function Star({ fill, half, dim }: { fill?: boolean; half?: boolean; dim: number
   return (
     <svg width={dim} height={dim} viewBox="0 0 24 24" aria-hidden="true">
       <path
-        fill={fill ? '#D88B6A' : 'rgba(74,85,104,0.4)'}
+        fill={fill ? '#D4B896' : 'rgba(74,85,104,0.4)'}
         d="M12 2l2.9 6.9L22 10l-5.5 4.7L18.2 22 12 18.3 5.8 22l1.7-7.3L2 10l7.1-1.1z"
       />
     </svg>

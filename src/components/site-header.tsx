@@ -31,7 +31,7 @@ export function SiteHeader() {
           href="/"
           className="font-display font-normal text-[1.45rem] tracking-tight text-gold flex items-center gap-1.5"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_12px_#D88B6A]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_12px_#D4B896]" />
           TopOutils<span className="text-muted-foreground">.</span>IA
         </Link>
 
@@ -83,7 +83,7 @@ export function SiteHeader() {
           </Link>
           <Link
             href="/#newsletter"
-            className="border border-white/15 rounded-md px-4 py-2 text-foreground hover:border-gold hover:text-gold hover:bg-[rgba(216, 139, 106,0.08)] transition text-xs"
+            className="border border-white/15 rounded-md px-4 py-2 text-foreground hover:border-gold hover:text-gold hover:bg-[rgba(212, 184, 150,0.08)] transition text-xs"
           >
             Newsletter
           </Link>

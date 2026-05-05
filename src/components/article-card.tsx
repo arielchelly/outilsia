@@ -5,7 +5,7 @@ export function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/blog/${article.slug}`}
-      className="group bg-white/[0.015] border border-white/[0.06] rounded-2xl overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-1 hover:border-[rgba(216, 139, 106,0.25)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_30px_rgba(216, 139, 106,0.06)]"
+      className="group bg-white/[0.015] border border-white/[0.06] rounded-2xl overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-1 hover:border-[rgba(212, 184, 150,0.25)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_30px_rgba(212, 184, 150,0.06)]"
     >
       <div className="aspect-[16/9] bg-elevated relative overflow-hidden">
         <svg
@@ -17,7 +17,7 @@ export function ArticleCard({ article }: { article: Article }) {
           <defs>
             <linearGradient id={`gr-${article.slug}`} x1="0" x2="1">
               <stop offset="0%" stopColor="#161B27" />
-              <stop offset="100%" stopColor="#15090E" />
+              <stop offset="100%" stopColor="#0A0A0B" />
             </linearGradient>
           </defs>
           <rect width="800" height="450" fill={`url(#gr-${article.slug})`} />
@@ -27,7 +27,7 @@ export function ArticleCard({ article }: { article: Article }) {
             fontFamily="Georgia, serif"
             fontSize="46"
             fontWeight="300"
-            fill="#D88B6A"
+            fill="#D4B896"
             textAnchor="middle"
           >
             {(article.category_label || article.category).slice(0, 30)}

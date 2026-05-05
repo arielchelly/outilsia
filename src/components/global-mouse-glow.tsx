@@ -65,7 +65,7 @@ export function GlobalMouseGlow() {
         className="absolute top-0 left-0 w-[900px] h-[900px] rounded-full opacity-0 transition-opacity duration-500 will-change-transform"
         style={{
           background:
-            'radial-gradient(circle, rgba(216, 139, 106,0.10) 0%, rgba(216, 139, 106,0.03) 35%, rgba(216, 139, 106,0) 70%)',
+            'radial-gradient(circle, rgba(212, 184, 150,0.10) 0%, rgba(212, 184, 150,0.03) 35%, rgba(212, 184, 150,0) 70%)',
           filter: 'blur(80px)',
         }}
       />

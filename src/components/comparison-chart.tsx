@@ -21,7 +21,7 @@ const DIMENSIONS: { key: keyof Tool['scores']; label: string }[] = [
   { key: 'overall', label: 'Global' },
 ];
 
-const COLORS = ['#D88B6A', '#94A88C', '#B8A89B', '#C45A52', '#E8A66A'];
+const COLORS = ['#D4B896', '#86868B', '#86868B', '#FF453A', '#D4B896'];
 
 const CHART_SIZE = 420;
 const PADDING = 80;

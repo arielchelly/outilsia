@@ -25,34 +25,28 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        // Brand — "Maison" editorial palette.
-        // Replaces the cold gold-on-blue-black "AI default" look with a warm
-        // press/wine-cellar register: terracotta + cream + deep bordeaux + sage.
-        // Class name `gold` is preserved (it now maps to terracotta) so existing
-        // components keep working.
+        // Brand — "Apple-clean" palette.
+        // Near-black backgrounds, Apple system text, ONE muted sand accent
+        // used very sparingly. Class name `gold` kept for component compat —
+        // it now resolves to a restrained sand tone.
         gold: {
-          DEFAULT: '#D88B6A',   // terracotta — primary accent
-          deep: '#A85A3D',       // burnt sienna
-          bright: '#E8A483',     // peach pink (hover)
+          DEFAULT: '#D4B896',   // muted sand — restrained accent
+          deep: '#A89570',
+          bright: '#E5CFAE',
         },
-        terracotta: {
-          DEFAULT: '#D88B6A',
-          deep: '#A85A3D',
-          bright: '#E8A483',
-        },
-        cream: '#F2EAD9',         // parchment text on dark
-        bordeaux: '#6B1B2E',      // deep wine
-        sage: '#94A88C',          // muted green — replaces electric/mint
-        amber: '#E8A66A',         // warm amber
-        mint: '#94A88C',          // alias → sage
-        electric: '#94A88C',      // alias → sage
-        coral: '#C45A52',         // muted coral
-        sky: '#B8A89B',           // warm taupe — replaces cold sky
-        // Backgrounds — warm wine/plum register, nearly identical for unity.
-        void: '#15090E',          // deep aubergine-noir
-        surface: '#1A0D13',       // wine-noir
-        elevated: '#211119',      // muted plum
-        overlay: '#2B1822',       // dusty bordeaux
+        cream: '#F5F5F7',         // Apple text white
+        sand: '#D4B896',
+        sage: '#86868B',          // Apple system gray
+        amber: '#D4B896',
+        mint: '#86868B',
+        electric: '#86868B',
+        coral: '#FF453A',         // Apple system red (rare destructive)
+        sky: '#86868B',
+        // Backgrounds — neutral near-black, Apple-like restraint.
+        void: '#0A0A0B',
+        surface: '#0F0F11',
+        elevated: '#16161A',
+        overlay: '#1C1C20',
       },
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],

@@ -194,7 +194,7 @@ export default async function CategoryPage({ params }: Props) {
 
           <div className="text-center">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-elevated border border-white/15 rounded-full text-[0.78rem] text-muted-foreground mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-electric shadow-[0_0_8px_#94A88C]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-electric shadow-[0_0_8px_#86868B]" />
               {tools.length} outils testés • Mai 2026
             </span>
             <h1 className="heading-display text-[clamp(2.6rem,6vw,4.5rem)] mb-4">
@@ -415,7 +415,7 @@ export default async function CategoryPage({ params }: Props) {
               {FAQ_DEFAULT.map((f, i) => (
                 <details
                   key={i}
-                  className="bg-elevated border border-white/[0.06] rounded-md p-5 group open:border-[rgba(216, 139, 106,0.3)]"
+                  className="bg-elevated border border-white/[0.06] rounded-md p-5 group open:border-[rgba(212, 184, 150,0.3)]"
                 >
                   <summary className="cursor-pointer font-medium text-foreground text-[1.02rem] list-none flex items-center justify-between">
                     {f.q}

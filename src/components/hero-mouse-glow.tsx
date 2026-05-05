@@ -76,7 +76,7 @@ export function HeroMouseGlow() {
         className="absolute top-0 left-0 w-[700px] h-[700px] rounded-full opacity-0 transition-opacity duration-500 will-change-transform"
         style={{
           background:
-            'radial-gradient(circle, rgba(216, 139, 106,0.18) 0%, rgba(216, 139, 106,0.04) 40%, rgba(216, 139, 106,0) 70%)',
+            'radial-gradient(circle, rgba(212, 184, 150,0.18) 0%, rgba(212, 184, 150,0.04) 40%, rgba(212, 184, 150,0) 70%)',
           filter: 'blur(40px)',
         }}
       />

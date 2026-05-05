@@ -23,7 +23,7 @@ export function CookieBanner() {
 
   return (
     <div
-      className="fixed bottom-4 left-4 right-4 max-w-[720px] mx-auto bg-elevated border border-[rgba(216, 139, 106,0.3)] rounded-2xl p-5 z-[10000] shadow-[0_16px_48px_rgba(0,0,0,0.5)] flex flex-wrap items-center justify-between gap-4 animate-fade-in"
+      className="fixed bottom-4 left-4 right-4 max-w-[720px] mx-auto bg-elevated border border-[rgba(212, 184, 150,0.3)] rounded-2xl p-5 z-[10000] shadow-[0_16px_48px_rgba(0,0,0,0.5)] flex flex-wrap items-center justify-between gap-4 animate-fade-in"
       role="dialog"
       aria-label="Consentement cookies"
     >

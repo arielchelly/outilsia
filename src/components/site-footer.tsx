@@ -62,7 +62,7 @@ export function SiteFooter() {
               href="/"
               className="font-display font-normal text-[1.6rem] tracking-tight text-gold flex items-center gap-2"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_10px_#D88B6A]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_10px_#D4B896]" />
               TopOutils<span className="text-muted-foreground">.</span>IA
             </Link>
             <p className="mt-5 text-[0.9rem] text-muted-foreground leading-relaxed">
@@ -77,7 +77,7 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noopener"
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/40 hover:bg-[rgba(216, 139, 106,0.08)] transition-all"
+                  className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/40 hover:bg-[rgba(212, 184, 150,0.08)] transition-all"
                 >
                   {s.icon}
                 </a>

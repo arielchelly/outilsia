@@ -57,7 +57,7 @@ const items = [
     span: 'lg:col-span-2',
     visual: (
       <div className="absolute right-6 top-6 flex items-center gap-2 pointer-events-none">
-        <span className="w-2 h-2 rounded-full bg-mint shadow-[0_0_12px_#94A88C] animate-pulse-blink" />
+        <span className="w-2 h-2 rounded-full bg-mint shadow-[0_0_12px_#86868B] animate-pulse-blink" />
         <span className="text-[0.7rem] text-mint uppercase tracking-[0.18em]">Live</span>
       </div>
     ),
@@ -86,7 +86,7 @@ export function WhyBento() {
               <article
                 className={cn(
                   'relative bg-white/[0.015] border border-white/[0.06] rounded-3xl p-8 overflow-hidden transition-all duration-500',
-                  'hover:border-[rgba(216, 139, 106,0.25)] hover:bg-white/[0.025]',
+                  'hover:border-[rgba(212, 184, 150,0.25)] hover:bg-white/[0.025]',
                   it.span
                 )}
               >

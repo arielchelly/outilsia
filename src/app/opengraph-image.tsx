@@ -17,7 +17,7 @@ export default async function Image() {
           justifyContent: 'space-between',
           padding: 80,
           background:
-            'radial-gradient(ellipse at 30% 20%, rgba(216,139,106,0.20) 0%, rgba(216,139,106,0.04) 40%, transparent 70%), #15090E',
+            'radial-gradient(ellipse at 30% 20%, rgba(212, 184, 150,0.20) 0%, rgba(212, 184, 150,0.04) 40%, transparent 70%), #0A0A0B',
           fontFamily: 'serif',
         }}
       >
@@ -27,13 +27,13 @@ export default async function Image() {
               width: 14,
               height: 14,
               borderRadius: 999,
-              background: '#D88B6A',
-              boxShadow: '0 0 24px #D88B6A',
+              background: '#D4B896',
+              boxShadow: '0 0 24px #D4B896',
             }}
           />
           <div
             style={{
-              color: '#D88B6A',
+              color: '#D4B896',
               fontSize: 32,
               letterSpacing: 4,
               textTransform: 'uppercase',
@@ -49,7 +49,7 @@ export default async function Image() {
             style={{
               fontSize: 92,
               lineHeight: 1.05,
-              color: '#F2EAD9',
+              color: '#F5F5F7',
               letterSpacing: -2,
               fontStyle: 'italic',
               maxWidth: 1000,
@@ -61,7 +61,7 @@ export default async function Image() {
           <div
             style={{
               fontSize: 30,
-              color: '#B8A89B',
+              color: '#86868B',
               fontFamily: 'sans-serif',
               maxWidth: 900,
               display: 'flex',
@@ -76,7 +76,7 @@ export default async function Image() {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            color: '#B8A89B',
+            color: '#86868B',
             fontSize: 22,
             fontFamily: 'sans-serif',
             letterSpacing: 2,

@@ -20,21 +20,21 @@ interface Props {
   tools: Tool[];
 }
 
-// Warm editorial palette — terracotta family + accents that harmonise on
-// wine-noir background. Distinct enough for a 12-line chart, no neon.
+// Apple-clean chart palette — restrained mono with one sand accent.
+// Distinct shades of cool gray + warm sand for the top-ranked tool.
 const COLORS = [
-  '#D88B6A', // terracotta
-  '#94A88C', // sage
-  '#E8A483', // peach
-  '#B8A89B', // taupe
-  '#C45A52', // muted coral
-  '#A85A3D', // burnt sienna
-  '#D4B483', // warm sand
-  '#7E8C7A', // dusty olive
-  '#E8C9A5', // cream apricot
-  '#8B6F47', // mocha
-  '#C19778', // hazelnut
-  '#9B7B6B', // cocoa
+  '#D4B896', // sand — top tool only
+  '#FFFFFF', // pure white
+  '#C7C7CC', // light gray
+  '#A0A0A6', // mid-light gray
+  '#86868B', // Apple system gray
+  '#6E6E73', // mid-dark gray
+  '#E5CFAE', // bright sand
+  '#5A5A60', // dark gray
+  '#48484E', // deeper gray
+  '#A89570', // deep sand
+  '#3A3A3F', // near-charcoal
+  '#B5B5BA', // soft gray
 ];
 
 // Six dimensions on the X axis — all in the 0..5 score scale for visual coherence.
@@ -92,7 +92,7 @@ export function ComparateurGraphique({ tools }: Props) {
       selectedTools.map((t) => ({
         id: t.id,
         name: t.name,
-        color: colorMap.get(t.id) ?? '#D88B6A',
+        color: colorMap.get(t.id) ?? '#D4B896',
         scores: DIMENSIONS.reduce<Record<string, number>>((acc, d) => {
           acc[d.label] = t.scores[d.key];
           return acc;
@@ -125,7 +125,7 @@ export function ComparateurGraphique({ tools }: Props) {
             <button
               type="button"
               onClick={selectAll}
-              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(216, 139, 106,0.3)] transition uppercase tracking-wider"
+              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(212, 184, 150,0.3)] transition uppercase tracking-wider"
             >
               Tout cocher
             </button>
@@ -142,7 +142,7 @@ export function ComparateurGraphique({ tools }: Props) {
         <div className="flex flex-wrap gap-2">
           {sortedTools.map((tool) => {
             const isOn = selected.has(tool.id);
-            const color = colorMap.get(tool.id) ?? '#D88B6A';
+            const color = colorMap.get(tool.id) ?? '#D4B896';
             return (
               <button
                 key={tool.id}
@@ -170,7 +170,7 @@ export function ComparateurGraphique({ tools }: Props) {
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#15090E"
+                      stroke="#0A0A0B"
                       strokeWidth={3}
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -191,7 +191,7 @@ export function ComparateurGraphique({ tools }: Props) {
       {/* Chart */}
       <div
         className="rounded-2xl border border-white/[0.06] p-4 sm:p-6 overflow-x-auto"
-        style={{ background: '#15090E' }}
+        style={{ background: '#0A0A0B' }}
       >
         <div className="min-w-[640px]">
           {chartTools.length === 0 ? (
@@ -208,7 +208,7 @@ export function ComparateurGraphique({ tools }: Props) {
       {selectedTools.length > 0 && (
         <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2">
           {selectedTools.map((tool) => {
-            const color = colorMap.get(tool.id) ?? '#D88B6A';
+            const color = colorMap.get(tool.id) ?? '#D4B896';
             return (
               <span
                 key={tool.id}

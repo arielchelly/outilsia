@@ -37,8 +37,8 @@ function CustomTooltip({ active, label, payload }: CustomTooltipProps) {
   return (
     <div
       style={{
-        background: '#211119',
-        border: '1px solid rgba(216, 139, 106, 0.3)',
+        background: '#16161A',
+        border: '1px solid rgba(212, 184, 150, 0.3)',
         borderRadius: 12,
         padding: '12px 16px',
         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.6)',
@@ -48,7 +48,7 @@ function CustomTooltip({ active, label, payload }: CustomTooltipProps) {
     >
       <div
         style={{
-          color: 'rgba(242, 234, 217, 0.6)',
+          color: 'rgba(245, 245, 247, 0.6)',
           fontSize: 11,
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
@@ -79,13 +79,13 @@ function CustomTooltip({ active, label, payload }: CustomTooltipProps) {
                   boxShadow: `0 0 8px ${entry.color}`,
                 }}
               />
-              <span style={{ color: '#F2EAD9', fontSize: 13, fontWeight: 500 }}>
+              <span style={{ color: '#F5F5F7', fontSize: 13, fontWeight: 500 }}>
                 {entry.dataKey}
               </span>
             </span>
             <span
               style={{
-                color: '#D88B6A',
+                color: '#D4B896',
                 fontFamily: 'var(--font-mono)',
                 fontSize: 13,
                 fontWeight: 500,
@@ -118,8 +118,8 @@ export default function ComparateurGraphiqueChart({ tools, dimensions }: ChartPr
         <CartesianGrid stroke="rgba(255, 255, 255, 0.06)" strokeDasharray="0" />
         <XAxis
           dataKey="dimension"
-          stroke="#B8A89B"
-          tick={{ fill: '#B8A89B', fontSize: 11, fontFamily: 'var(--font-body)' }}
+          stroke="#86868B"
+          tick={{ fill: '#86868B', fontSize: 11, fontFamily: 'var(--font-body)' }}
           axisLine={{ stroke: 'rgba(255,255,255,0.12)' }}
           tickLine={{ stroke: 'rgba(255,255,255,0.12)' }}
           padding={{ left: 10, right: 10 }}
@@ -127,8 +127,8 @@ export default function ComparateurGraphiqueChart({ tools, dimensions }: ChartPr
         <YAxis
           domain={[0, 5]}
           ticks={[0, 1, 2, 3, 4, 5]}
-          stroke="#B8A89B"
-          tick={{ fill: '#B8A89B', fontSize: 11, fontFamily: 'var(--font-mono)' }}
+          stroke="#86868B"
+          tick={{ fill: '#86868B', fontSize: 11, fontFamily: 'var(--font-mono)' }}
           axisLine={{ stroke: 'rgba(255,255,255,0.12)' }}
           tickLine={{ stroke: 'rgba(255,255,255,0.12)' }}
           label={{
@@ -136,14 +136,14 @@ export default function ComparateurGraphiqueChart({ tools, dimensions }: ChartPr
             angle: -90,
             position: 'insideLeft',
             offset: 10,
-            fill: '#B8A89B',
+            fill: '#86868B',
             fontSize: 11,
             fontFamily: 'var(--font-body)',
             style: { letterSpacing: '0.18em', textAnchor: 'middle' },
           }}
         />
         <Tooltip
-          cursor={{ stroke: 'rgba(216, 139, 106,0.25)', strokeWidth: 1, strokeDasharray: '4 4' }}
+          cursor={{ stroke: 'rgba(212, 184, 150,0.25)', strokeWidth: 1, strokeDasharray: '4 4' }}
           content={(props) => (
             <CustomTooltip
               active={props.active}
@@ -167,13 +167,13 @@ export default function ComparateurGraphiqueChart({ tools, dimensions }: ChartPr
                 r: isFocused ? 5 : 4,
                 fill: tool.color,
                 strokeWidth: 2,
-                stroke: '#15090E',
+                stroke: '#0A0A0B',
                 opacity: isDimmed ? 0.25 : 1,
               }}
               activeDot={{
                 r: 7,
                 fill: tool.color,
-                stroke: '#15090E',
+                stroke: '#0A0A0B',
                 strokeWidth: 2,
                 onMouseEnter: () => setHoveredTool(tool.id),
                 onMouseLeave: () => setHoveredTool(null),

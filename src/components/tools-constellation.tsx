@@ -192,7 +192,7 @@ export function ToolsConstellation() {
             const closeness = 1 - d / CONNECT_DISTANCE;
             const op = closeness * Math.min(a.depth, b.depth) * 0.45;
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(216, 139, 106, ${op.toFixed(3)})`;
+            ctx.strokeStyle = `rgba(212, 184, 150, ${op.toFixed(3)})`;
             ctx.lineWidth = 0.6 + closeness * 0.6;
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -239,7 +239,7 @@ export function ToolsConstellation() {
           const ty = a.y + (b.y - a.y) * tt;
           const trailFade = (1 - k / 4) * fade;
           ctx.beginPath();
-          ctx.fillStyle = `rgba(216, 139, 106, ${(0.85 * trailFade).toFixed(3)})`;
+          ctx.fillStyle = `rgba(212, 184, 150, ${(0.85 * trailFade).toFixed(3)})`;
           ctx.arc(tx, ty, 1.6 * (1 - k * 0.18), 0, Math.PI * 2);
           ctx.fill();
         }
@@ -247,8 +247,8 @@ export function ToolsConstellation() {
         // Main pulse with glow
         const grad = ctx.createRadialGradient(px, py, 0, px, py, 8);
         grad.addColorStop(0, `rgba(255, 230, 160, ${(0.95 * fade).toFixed(3)})`);
-        grad.addColorStop(0.4, `rgba(216, 139, 106, ${(0.5 * fade).toFixed(3)})`);
-        grad.addColorStop(1, 'rgba(216, 139, 106, 0)');
+        grad.addColorStop(0.4, `rgba(212, 184, 150, ${(0.5 * fade).toFixed(3)})`);
+        grad.addColorStop(1, 'rgba(212, 184, 150, 0)');
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(px, py, 8, 0, Math.PI * 2);
@@ -300,7 +300,7 @@ export function ToolsConstellation() {
         <div
           key={s.domain}
           data-star=""
-          className="absolute top-0 left-0 rounded-full bg-white border border-white/30 overflow-hidden flex items-center justify-center will-change-transform shadow-[0_4px_18px_rgba(0,0,0,0.5),0_0_0_1px_rgba(216, 139, 106,0.1)]"
+          className="absolute top-0 left-0 rounded-full bg-white border border-white/30 overflow-hidden flex items-center justify-center will-change-transform shadow-[0_4px_18px_rgba(0,0,0,0.5),0_0_0_1px_rgba(212, 184, 150,0.1)]"
           style={{
             width: LOGO_SIZE,
             height: LOGO_SIZE,
@@ -327,8 +327,8 @@ export function ToolsConstellation() {
                 const parent = img.parentElement;
                 if (parent) {
                   parent.style.background =
-                    'linear-gradient(135deg, #D88B6A 0%, #A85A3D 100%)';
-                  parent.innerHTML = `<span style="font-family:var(--font-display);color:#15090E;font-weight:600;font-size:1.1rem;">${s.name.charAt(0)}</span>`;
+                    'linear-gradient(135deg, #D4B896 0%, #A89570 100%)';
+                  parent.innerHTML = `<span style="font-family:var(--font-display);color:#0A0A0B;font-weight:600;font-size:1.1rem;">${s.name.charAt(0)}</span>`;
                 }
               }
             }}
