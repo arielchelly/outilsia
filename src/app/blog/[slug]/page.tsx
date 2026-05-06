@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Newsletter } from '@/components/newsletter';
 import { Button } from '@/components/ui/button';
+import { RelatedArticles } from '@/components/related-articles';
 import { allArticles, CATEGORIES, SITE_URL, getArticleBySlug } from '@/lib/data';
 
 interface Props {
@@ -46,12 +47,17 @@ export default async function ArticlePage({ params }: Props) {
     '@id': `${pageUrl}#article`,
     headline: article.title,
     description: article.description,
-    author: { '@type': 'Organization', name: 'TopOutils.IA', url: SITE_URL },
+    author: { '@type': 'Organization', '@id': `${SITE_URL}/#organization`, name: 'TopOutils.IA', url: SITE_URL },
     publisher: { '@id': `${SITE_URL}/#organization` },
     datePublished: article.date_published,
     dateModified: article.date_modified,
     mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
-    image: `${SITE_URL}/og-default.png`,
+    image: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/opengraph-image`,
+      width: 1200,
+      height: 630,
+    },
     inLanguage: 'fr-FR',
     articleSection: article.category_label || article.category,
     wordCount: article.content?.split(/\s+/).length ?? 0,
@@ -130,9 +136,16 @@ export default async function ArticlePage({ params }: Props) {
             </section>
           )}
 
+          {/* Pour aller plus loin — drives 8-15+ internal links per article */}
+          <RelatedArticles
+            slugs={article.related_articles ?? []}
+            category={article.related_category}
+            exclude={article.slug}
+          />
+
           {article.related_category && categoryMeta && (
-            <div className="mt-16 text-center">
-              <Link href={`/pages/${article.related_category}`}>
+            <div className="mt-12 text-center">
+              <Link href={`/pages/${article.related_category}/`}>
                 <Button variant="primary">Voir le comparatif {categoryMeta.label} →</Button>
               </Link>
             </div>

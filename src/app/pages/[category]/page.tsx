@@ -68,25 +68,37 @@ export default async function CategoryPage({ params }: Props) {
   const pageUrl = `${SITE_URL}/pages/${slug}`;
   const headline = `Meilleur outil IA ${meta.label.toLowerCase()} 2026 : Top ${tools.length} comparé`;
 
+  // Stable logo URL for schema (Google's favicon CDN never 404s).
+  const schemaLogo = (domain: string) =>
+    `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+  const domainOf = (url: string) => {
+    try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return url; }
+  };
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     '@id': `${pageUrl}#article`,
     headline,
     description: meta.intro,
-    author: { '@type': 'Organization', name: 'TopOutils.IA', url: SITE_URL },
+    author: { '@type': 'Organization', '@id': `${SITE_URL}/#organization`, name: 'TopOutils.IA', url: SITE_URL },
     publisher: { '@id': `${SITE_URL}/#organization` },
-    datePublished: '2026-01-15',
-    dateModified: '2026-05-01',
+    datePublished: '2026-01-15T00:00:00+01:00',
+    dateModified: '2026-05-01T00:00:00+02:00',
     mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
-    image: `${SITE_URL}/og-default.png`,
+    image: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/opengraph-image`,
+      width: 1200,
+      height: 630,
+    },
     inLanguage: 'fr-FR',
     isAccessibleForFree: true,
     articleSection: meta.label,
   };
 
-  // ItemList enriched: each item embeds a Product with AggregateRating + Offers,
-  // unlocking star snippets in SERPs.
+  // ItemList enriched: each item embeds a SoftwareApplication with
+  // AggregateRating + Offers (star snippet eligible).
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -99,6 +111,7 @@ export default async function CategoryPage({ params }: Props) {
         .map((p) => p.price_eur)
         .filter((p) => typeof p === 'number' && p > 0)
         .sort((a, b) => a - b)[0];
+      const isFree = !lowestPaid;
       return {
         '@type': 'ListItem',
         position: i + 1,
@@ -110,9 +123,9 @@ export default async function CategoryPage({ params }: Props) {
           description: t.description_short || t.tagline,
           url: t.website,
           applicationCategory: 'BusinessApplication',
-          operatingSystem: 'Web, iOS, Android',
+          operatingSystem: 'Web',
           inLanguage: 'fr-FR',
-          ...(t.logo ? { image: t.logo } : {}),
+          image: schemaLogo(domainOf(t.website)),
           aggregateRating: {
             '@type': 'AggregateRating',
             ratingValue: t.scores.overall.toFixed(1),
@@ -123,24 +136,22 @@ export default async function CategoryPage({ params }: Props) {
           },
           review: {
             '@type': 'Review',
-            author: { '@type': 'Organization', name: 'TopOutils.IA' },
+            author: { '@type': 'Organization', name: 'TopOutils.IA', url: SITE_URL },
             datePublished: '2026-05-01',
             reviewRating: {
               '@type': 'Rating',
               ratingValue: t.scores.overall.toFixed(1),
               bestRating: '5',
+              worstRating: '1',
             },
             reviewBody: t.description_short || t.tagline,
           },
           offers: {
             '@type': 'Offer',
-            price: lowestPaid?.toString() ?? '0',
+            price: isFree ? '0' : lowestPaid.toString(),
             priceCurrency: 'EUR',
             availability: 'https://schema.org/InStock',
             url: t.website,
-            ...(t.pricing.has_free_trial
-              ? { eligibleTransactionVolume: { '@type': 'PriceSpecification', name: `Essai gratuit ${t.pricing.free_trial_days} jours` } }
-              : {}),
           },
         },
       };

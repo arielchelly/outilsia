@@ -180,7 +180,7 @@ export function ComparateurGraphique({ tools }: Props) {
                     </svg>
                   )}
                 </span>
-                <ToolLogo src={tool.logo} name={tool.name} size={20} />
+                <ToolLogo tool={tool} name={tool.name} size={20} />
                 <span className="text-[0.85rem] font-medium whitespace-nowrap">{tool.name}</span>
               </button>
             );

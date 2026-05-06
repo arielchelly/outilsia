@@ -40,7 +40,7 @@ export function ToolCard({ tool, index }: Props) {
       )}
     >
       <div className="flex items-start gap-6 pb-6 border-b border-white/[0.06] flex-wrap">
-        <ToolLogo src={tool.logo} name={tool.name} size={56} />
+        <ToolLogo tool={tool} name={tool.name} size={56} />
         <div className="flex-1 min-w-[200px]">
           <h2 className="font-display font-normal text-[1.8rem] text-foreground mb-1 flex items-center gap-3 flex-wrap">
             #{index + 1} — {tool.name}

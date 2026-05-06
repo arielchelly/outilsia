@@ -135,7 +135,7 @@ export function ComparativeTable({ tools, category: _category }: Props) {
                     <span className="absolute left-0 top-3 bottom-3 w-1 bg-gold" aria-hidden="true" />
                   )}
                   <span className="flex items-center gap-3">
-                    <ToolLogo src={tool.logo} name={tool.name} size={32} />
+                    <ToolLogo tool={tool} name={tool.name} size={32} />
                     <span className="text-foreground font-medium">
                       {tool.is_recommended ? '★ ' : ''}
                       {tool.name}

@@ -28,7 +28,7 @@ export function TopToolCard({ tool, rank, isFirst }: { tool: Tool; rank: number;
       </span>
 
       <div className="flex items-center gap-6 relative">
-        <ToolLogo src={tool.logo} name={tool.name} size={64} />
+        <ToolLogo tool={tool} name={tool.name} size={64} />
         <div>
           <h3 className="font-display font-normal text-[1.8rem] text-foreground mb-1 flex items-center gap-3 flex-wrap">
             {tool.name}

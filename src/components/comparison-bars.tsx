@@ -155,7 +155,7 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
                     </svg>
                   )}
                 </span>
-                <ToolLogo src={tool.logo} name={tool.name} size={20} />
+                <ToolLogo tool={tool} name={tool.name} size={20} />
                 <span className="text-[0.85rem] font-medium whitespace-nowrap">
                   {tool.name}
                 </span>
@@ -215,7 +215,7 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
 
                       {/* Tool info */}
                       <div className="flex items-center gap-3 min-w-0">
-                        <ToolLogo src={tool.logo} name={tool.name} size={36} />
+                        <ToolLogo tool={tool} name={tool.name} size={36} />
                         <div className="min-w-0">
                           <div className="flex items-center gap-2">
                             <span className="text-foreground font-medium text-[0.95rem] truncate">

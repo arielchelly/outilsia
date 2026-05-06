@@ -2,7 +2,11 @@ import toolsRaw from '@/data/tools.json';
 import articlesRaw from '@/data/articles.json';
 import type { Tool, Article, CategorySlug, CategoryMeta, ToolsData, ArticlesData } from './types';
 
-export const SITE_URL = 'https://topoutils.ia';
+// Centralised so the deployed domain can be swapped via env var (Vercel /
+// Cloudflare Pages). Trailing slash stripped to keep URL composition clean.
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://outilsia-rho.vercel.app'
+).replace(/\/$/, '');
 export const SITE_NAME = 'TopOutils.IA';
 
 const toolsData = toolsRaw as unknown as ToolsData;

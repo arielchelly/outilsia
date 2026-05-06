@@ -80,7 +80,12 @@ export const metadata: Metadata = {
   verification: {},
   alternates: {
     canonical: '/',
-    languages: { 'fr-FR': '/' },
+    languages: {
+      // Site is French-only — declare fr + x-default both pointing to root,
+      // absolute URLs to avoid Google's "hreflang conflict" warnings.
+      fr: SITE_URL,
+      'x-default': SITE_URL,
+    },
   },
 };
 
@@ -90,15 +95,23 @@ const organizationSchema = {
   '@id': `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  // ImageObject with dimensions — required for rich-result eligibility.
+  logo: {
+    '@type': 'ImageObject',
+    url: `${SITE_URL}/opengraph-image`,
+    width: 1200,
+    height: 630,
+    caption: SITE_NAME,
+  },
   description:
     "Site français indépendant de comparatif d'outils d'intelligence artificielle. Nous testons et notons les meilleures IA dans 8 catégories.",
   foundingDate: '2024',
   inLanguage: 'fr-FR',
+  sameAs: ['https://x.com/topoutilsia'],
   knowsAbout: [
     'Intelligence Artificielle',
     'Outils IA',
-    'Génération d\'image IA',
+    "Génération d'image IA",
     'Chatbots IA',
     'Code IA',
     'SEO IA',
