@@ -91,21 +91,22 @@
     background-size: 200px 200px;
   }
 
-  /* macOS Big Sur cursors (apple_cursor / ful1e5) — black variant.
-     CSS-only, no JS overlay. Hotspots are in image-natural pixels;
-     SVGs are rendered at 32px so the small numbers below land correctly. */
+  /* macOS Big Sur cursors (apple_cursor / ful1e5).
+     - Default arrow + text: black fill, white outline (Big Sur Black variant).
+     - Pointing hand on clickables: inverted — white fill, black outline + details.
+     CSS-only, no JS. SVGs rendered at 24x24 so hotspots scale accordingly. */
   * {
-    cursor: url('/cursors/pointer.svg') 4 4, auto;
+    cursor: url('/cursors/pointer.svg') 3 3, auto;
   }
   a, a[href], button, [role="button"], label,
   input[type="checkbox"], input[type="radio"],
   select, summary, .btn, [data-cursor="point"] {
-    cursor: url('/cursors/pointing_hand.svg') 8 4, pointer;
+    cursor: url('/cursors/pointing_hand.svg') 6 3, pointer;
   }
   input[type="text"], input[type="email"], input[type="password"],
   input[type="search"], input[type="url"], input[type="number"],
   textarea, [contenteditable="true"] {
-    cursor: url('/cursors/text.svg') 12 12, text;
+    cursor: url('/cursors/text.svg') 9 9, text;
   }
   button:disabled, [aria-disabled="true"] {
     cursor: not-allowed;
