@@ -13,6 +13,7 @@ import { TopToolCard } from '@/components/top-tool-card';
 import { ArticleCard } from '@/components/article-card';
 import { Newsletter } from '@/components/newsletter';
 import { CategoryIcon } from '@/components/category-icon';
+import { StickyScrollSection } from '@/components/StickyScrollSection';
 import { allTools, allArticles, CATEGORIES, CATEGORY_SLUGS, getRecentArticles, toolsMeta } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
@@ -139,6 +140,9 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      {/* STICKY SCROLL — méthode en 4 étapes */}
+      <StickyScrollSection />
 
       {/* TOP 3 */}
       <section className="py-24">
