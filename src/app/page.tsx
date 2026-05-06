@@ -14,6 +14,7 @@ import { ArticleCard } from '@/components/article-card';
 import { Newsletter } from '@/components/newsletter';
 import { CategoryIcon } from '@/components/category-icon';
 import { StickyScrollSection } from '@/components/StickyScrollSection';
+import { AnomalousMatterHero } from '@/components/ui/anomalous-matter-hero';
 import { allTools, allArticles, CATEGORIES, CATEGORY_SLUGS, getRecentArticles, toolsMeta } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
@@ -31,6 +32,9 @@ export default function HomePage() {
 
   return (
     <>
+      {/* TOP HERO — Anomalous Matter (3D wireframe icosahedron) */}
+      <AnomalousMatterHero />
+
       {/* HERO with Spline 3D */}
       <section className="relative pt-[calc(72px+3rem)] pb-12 overflow-hidden">
         <div className="hero-glow" aria-hidden="true" />
