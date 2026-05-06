@@ -14,6 +14,7 @@ import { ArticleCard } from '@/components/article-card';
 import { Newsletter } from '@/components/newsletter';
 import { CategoryIcon } from '@/components/category-icon';
 import { StickyScrollSection } from '@/components/StickyScrollSection';
+import { AnimatedShaderHero } from '@/components/ui/animated-shader-hero';
 import { allTools, allArticles, CATEGORIES, CATEGORY_SLUGS, getRecentArticles, toolsMeta } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
@@ -31,61 +32,26 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO with Spline 3D */}
-      <section className="relative pt-[calc(72px+3rem)] pb-12 overflow-hidden">
-        <div className="hero-glow" aria-hidden="true" />
+      {/* HERO — animated shader background ("signal flow" theme) */}
+      <AnimatedShaderHero
+        trustBadge={{
+          text: `${toolsMeta.total} outils testés • Mis à jour mai 2026`,
+        }}
+        headline={{
+          line1: "Trouvez l'outil IA",
+          line2: 'parfait. En français.',
+        }}
+        subtitle="Des comparatifs indépendants, honnêtes et détaillés. Nous testons chaque outil pour que vous n'ayez pas à le faire."
+        buttons={{
+          primary: { text: 'Voir les comparatifs', href: '#categories' },
+          secondary: { text: 'Lire le blog', href: '/blog' },
+        }}
+      />
 
-        <div className="container relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 min-h-[640px]">
-            {/* Left content */}
-            <div className="relative z-10 flex flex-col justify-center py-8">
-              <span className="inline-flex items-center gap-2 self-start px-4 py-2 bg-elevated/60 backdrop-blur border border-white/15 rounded-full text-[0.78rem] text-muted-foreground mb-8 animate-fade-in">
-                <span className="w-1.5 h-1.5 rounded-full bg-electric shadow-[0_0_8px_#86868B] animate-pulse-blink" />
-                {toolsMeta.total} outils testés • Mis à jour mai 2026
-              </span>
-
-              <h1 className="text-4xl md:text-5xl lg:text-[4.2rem] font-normal leading-[1.02] mb-6 font-display tracking-[-0.025em]">
-                <span className="block text-foreground">
-                  <AnimatedText text="Trouvez l'outil IA" startDelay={0.15} />
-                </span>
-                <span className="block italic text-gold">
-                  <AnimatedText text="parfait." startDelay={0.55} />
-                </span>
-                <span className="block text-foreground">
-                  <AnimatedText text="En français." startDelay={0.75} />
-                </span>
-              </h1>
-
-              <p className="mt-2 text-neutral-300 max-w-lg text-[1.05rem] leading-relaxed">
-                Des comparatifs indépendants, honnêtes et détaillés. Nous testons chaque outil pour que vous n'ayez
-                pas à le faire.
-              </p>
-
-              <div className="flex flex-wrap gap-3 mt-8">
-                <Magnetic strength={0.45} radius={140}>
-                  <Link href="#categories">
-                    <Button variant="primary" size="lg">
-                      Voir les comparatifs <span className="arrow">→</span>
-                    </Button>
-                  </Link>
-                </Magnetic>
-                <Magnetic strength={0.35} radius={120}>
-                  <Link href="/blog">
-                    <Button variant="ghost" size="lg">
-                      Lire le blog
-                    </Button>
-                  </Link>
-                </Magnetic>
-              </div>
-            </div>
-
-            {/* Right content - 3D constellation of AI tool logos */}
-            <div className="relative h-[420px] lg:h-[640px] w-full">
-              <ToolsConstellation />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 max-w-2xl mx-auto mt-16 gap-8">
+      {/* STATS */}
+      <section className="py-12 border-y border-white/[0.06]">
+        <div className="container">
+          <div className="grid grid-cols-3 max-w-2xl mx-auto gap-8">
             <Stat num={toolsMeta.total} label="Outils testés" />
             <Stat num={toolsMeta.categories} label="Catégories" />
             <Stat num="12M+" label="Recherches/mois" />
