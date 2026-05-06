@@ -73,6 +73,27 @@
     color: var(--bg-void);
   }
 
+  /* Skip-link — keyboard users press Tab on page load to access main content. */
+  .skip-link {
+    position: absolute;
+    left: 0.75rem;
+    top: 0.75rem;
+    z-index: 10000;
+    padding: 0.6rem 1rem;
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border-gold);
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    transform: translateY(-150%);
+    transition: transform 200ms ease;
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
   :focus-visible {
     outline: 2px solid var(--gold);
     outline-offset: 3px;

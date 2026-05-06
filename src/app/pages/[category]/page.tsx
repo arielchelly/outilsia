@@ -9,6 +9,7 @@ import { ComparateurGraphique } from '@/components/ComparateurGraphique';
 import { Reveal } from '@/components/ui/reveal';
 import {
   CATEGORIES,
+  CATEGORY_COPY,
   CATEGORY_SLUGS,
   FAQ_DEFAULT,
   SITE_URL,
@@ -253,6 +254,19 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       </section>
 
+      {/* EDITORIAL INTRO — long-form copy for SEO + topical authority */}
+      {CATEGORY_COPY[slug] && (
+        <section className="py-12">
+          <div className="container-narrow">
+            <Reveal>
+              <div className="article-prose">
+                <p className="lead text-foreground/80">{CATEGORY_COPY[slug].intro}</p>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
       {/* TOP 3 */}
       <section className="py-24">
         <div className="container">
@@ -407,6 +421,13 @@ export default async function CategoryPage({ params }: Props) {
               <p>
                 <strong>Le piège de l'engagement annuel.</strong> Commencez toujours par un mois pour tester réellement.
               </p>
+
+              {CATEGORY_COPY[slug] && (
+                <>
+                  <h3>Notre verdict</h3>
+                  <p>{CATEGORY_COPY[slug].conclusion}</p>
+                </>
+              )}
             </div>
           </Reveal>
         </div>

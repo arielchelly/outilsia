@@ -61,6 +61,24 @@ export default function BlogIndexPage() {
         </div>
       </section>
 
+      {/* Editorial intro — boosts text/HTML ratio + topical authority */}
+      <section className="py-12">
+        <div className="container-narrow">
+          <div className="article-prose">
+            <p>
+              Le marché des outils d'intelligence artificielle évolue à une vitesse inédite : nouveaux modèles
+              chaque mois, refonte tarifaire, fonctionnalités qui apparaissent ou disparaissent. Notre journal
+              suit en temps réel ces évolutions pour offrir aux professionnels francophones des comparatifs
+              honnêtes, testés sur 30 jours minimum, sans complaisance commerciale. Vous trouverez ici les
+              guides d'achat de chaque catégorie (génération d'image, vidéo, copywriting, traduction,
+              chatbots, SEO, code, automatisation), les face-à-face détaillés des outils phares, et nos
+              analyses de fond sur les tendances IA qui changent réellement la donne pour le travail
+              intellectuel.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="pb-24">
         <div className="container">
           <Reveal>

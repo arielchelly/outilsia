@@ -156,10 +156,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        <a href="#main-content" className="skip-link">
+          Aller au contenu principal
+        </a>
         <SmoothScroll />
         <GlobalMouseGlow />
         <SiteHeader />
-        <main className="relative z-10">{children}</main>
+        <main id="main-content" className="relative z-10">{children}</main>
         <SiteFooter />
         <CookieBanner />
         <Toaster />
