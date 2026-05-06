@@ -18,10 +18,19 @@ export function GlobalMouseGlow() {
     if (window.matchMedia('(pointer: coarse)').matches) return; // skip touch
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+    let lastMove = 0;
+
+    function startLoop() {
+      if (rafRef.current !== null) return;
+      rafRef.current = requestAnimationFrame(tick);
+    }
+
     function onMove(e: MouseEvent) {
       targetRef.current.x = e.clientX;
       targetRef.current.y = e.clientY;
       visibleRef.current = true;
+      lastMove = performance.now();
+      startLoop();
     }
     function onLeave() {
       visibleRef.current = false;
@@ -41,9 +50,19 @@ export function GlobalMouseGlow() {
         g.style.transform = `translate3d(${currentRef.current.x - 350}px, ${currentRef.current.y - 350}px, 0)`;
         g.style.opacity = visibleRef.current ? '1' : '0';
       }
+      // Stop the loop after 1.5s of mouse inactivity AND once the lerp has
+      // settled — frees the main thread between interactions.
+      const idle = performance.now() - lastMove > 1500;
+      const settled = Math.hypot(
+        currentRef.current.x - targetRef.current.x,
+        currentRef.current.y - targetRef.current.y
+      ) < 0.5;
+      if (idle && settled) {
+        rafRef.current = null;
+        return;
+      }
       rafRef.current = requestAnimationFrame(tick);
     }
-    rafRef.current = requestAnimationFrame(tick);
 
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);

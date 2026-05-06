@@ -13,7 +13,16 @@ import { TopToolCard } from '@/components/top-tool-card';
 import { ArticleCard } from '@/components/article-card';
 import { Newsletter } from '@/components/newsletter';
 import { CategoryIcon } from '@/components/category-icon';
-import { StickyScrollSection } from '@/components/StickyScrollSection';
+import dynamic from 'next/dynamic';
+// Below-fold + heavy (Framer Motion + 4 sticky panels) — lazy-load so it
+// doesn't block initial render or compete with the constellation for CPU.
+// ssr:false isn't allowed inside a Server Component in Next 16, but a plain
+// dynamic() still defers the chunk on the client — initial HTML stays SEO-rich
+// while Framer Motion is loaded only when this section nears the viewport.
+const StickyScrollSection = dynamic(
+  () => import('@/components/StickyScrollSection').then((m) => m.StickyScrollSection),
+  { loading: () => <div className="h-[80vh]" aria-hidden="true" /> }
+);
 import { allTools, allArticles, CATEGORIES, CATEGORY_SLUGS, getRecentArticles, toolsMeta } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
