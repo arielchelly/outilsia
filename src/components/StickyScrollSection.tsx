@@ -117,9 +117,9 @@ export function StickyScrollSection() {
         className="relative h-[400vh]"
         aria-label="Notre méthode en quatre étapes"
       >
-        <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div className="container relative w-full">
-            <div className="absolute top-12 left-1/2 -translate-x-1/2">
+            <div className="mb-10 lg:mb-14">
               <Header compact />
             </div>
 
