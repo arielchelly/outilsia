@@ -7,8 +7,15 @@ import { SiteFooter } from '@/components/site-footer';
 import { CookieBanner } from '@/components/cookie-banner';
 import { GlobalMouseGlow } from '@/components/global-mouse-glow';
 import { SmoothScroll } from '@/components/smooth-scroll';
-import { WebGLBackground } from '@/components/webgl-background';
+import dynamic from 'next/dynamic';
 import { FloatingAction } from '@/components/floating-action';
+
+// WebGL shader is purely decorative — defer the chunk so it never competes
+// with hero hydration (Framer Motion + Spline). Loads after first paint.
+const WebGLBackground = dynamic(
+  () => import('@/components/webgl-background').then((m) => m.WebGLBackground),
+  { loading: () => null }
+);
 import { Toaster } from '@/components/ui/toaster';
 import { SITE_NAME, SITE_URL } from '@/lib/data';
 import './globals.css';

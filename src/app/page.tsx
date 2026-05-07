@@ -95,23 +95,14 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right content — constellation now blends into the page bg
-                (Stone-50). A subtle gold aurora mesh + faint inset hairline
-                give it form without the dark panel. */}
+            {/* Right content — constellation blends into the page bg
+                (Stone-50). The WebGL gold flow shader + aurora-mesh provide
+                all the visual depth needed; no decorative ring required. */}
             <div className="relative h-[420px] lg:h-[640px] w-full">
               {/* Gold aurora — slow morph behind the globe */}
               <div
                 aria-hidden="true"
                 className="absolute inset-0 pointer-events-none aurora-mesh"
-              />
-              {/* Soft inset hairline (rendered above bg, below globe) */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-6 rounded-full pointer-events-none"
-                style={{
-                  boxShadow:
-                    'inset 0 0 0 1px rgba(202,138,4,0.06), 0 40px 120px -40px rgba(202,138,4,0.18)',
-                }}
               />
               <ToolsConstellation />
             </div>
