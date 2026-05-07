@@ -36,10 +36,10 @@ export function ToolCard({ tool, index }: Props) {
       id={tool.slug}
       className={cn(
         'bg-surface border rounded-2xl p-8 mb-6 scroll-mt-24 transition-colors',
-        tool.is_recommended ? 'border-[rgba(212, 184, 150,0.3)] shadow-[0_0_50px_rgba(212, 184, 150,0.05)]' : 'border-white/[0.06] hover:border-white/[0.12]'
+        tool.is_recommended ? 'border-[rgba(212, 184, 150,0.3)] shadow-[0_0_50px_rgba(212, 184, 150,0.05)]' : 'border-black/[0.06] hover:border-black/[0.10]'
       )}
     >
-      <div className="flex items-start gap-6 pb-6 border-b border-white/[0.06] flex-wrap">
+      <div className="flex items-start gap-6 pb-6 border-b border-black/[0.06] flex-wrap">
         <ToolLogo tool={tool} name={tool.name} size={56} />
         <div className="flex-1 min-w-[200px]">
           <h2 className="font-display font-normal text-[1.8rem] text-foreground mb-1 flex items-center gap-3 flex-wrap">
@@ -64,7 +64,7 @@ export function ToolCard({ tool, index }: Props) {
           {tool.description_long || tool.description_short}
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-void rounded-md border border-white/[0.06]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-void rounded-md border border-black/[0.06]">
           <Meta label="Prix d'entrée" value={priceLabel(tool)} />
           <Meta
             label="Essai gratuit"
@@ -100,7 +100,7 @@ export function ToolCard({ tool, index }: Props) {
           {tool.pricing.plans.map((p, i) => (
             <div
               key={i}
-              className="py-2 border-b border-white/[0.06] flex justify-between gap-4 last:border-b-0 text-[0.9rem]"
+              className="py-2 border-b border-black/[0.06] flex justify-between gap-4 last:border-b-0 text-[0.9rem]"
             >
               <span>
                 <strong className="text-foreground">{p.name}</strong>

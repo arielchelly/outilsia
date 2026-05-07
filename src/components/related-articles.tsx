@@ -39,7 +39,7 @@ export function RelatedArticles({ slugs, category, exclude }: RelatedArticlesPro
   return (
     <aside
       aria-label="Pour aller plus loin"
-      className="mt-16 pt-12 border-t border-white/[0.08]"
+      className="mt-16 pt-12 border-t border-black/[0.08]"
     >
       <header className="mb-8">
         <span className="eyebrow block mb-3">Pour aller plus loin</span>
@@ -53,7 +53,7 @@ export function RelatedArticles({ slugs, category, exclude }: RelatedArticlesPro
           <Link
             key={a.slug}
             href={`/blog/${a.slug}/`}
-            className="group block p-5 rounded-2xl border border-white/[0.06] bg-elevated/40 hover:border-gold/30 hover:bg-elevated transition-all"
+            className="group block p-5 rounded-2xl border border-black/[0.06] bg-elevated/40 hover:border-gold/30 hover:bg-elevated transition-all"
           >
             <span className="text-[0.7rem] uppercase tracking-[0.18em] text-gold">
               {a.category_label || a.category}

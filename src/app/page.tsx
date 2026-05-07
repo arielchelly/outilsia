@@ -13,6 +13,10 @@ import { TopToolCard } from '@/components/top-tool-card';
 import { ArticleCard } from '@/components/article-card';
 import { Newsletter } from '@/components/newsletter';
 import { CategoryIcon } from '@/components/category-icon';
+import { TrustBar } from '@/components/trust-bar';
+import { TestimonialsWall } from '@/components/testimonials-wall';
+import { FAQAccordion } from '@/components/faq-accordion';
+import { PullQuoteSection } from '@/components/pull-quote-section';
 import dynamic from 'next/dynamic';
 // Below-fold + heavy (Framer Motion + 4 sticky panels) — lazy-load so it
 // doesn't block initial render or compete with the constellation for CPU.
@@ -48,8 +52,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 min-h-[640px]">
             {/* Left content */}
             <div className="relative z-10 flex flex-col justify-center py-8">
-              <span className="inline-flex items-center gap-2 self-start px-4 py-2 bg-elevated/60 backdrop-blur border border-white/15 rounded-full text-[0.78rem] text-muted-foreground mb-8 animate-fade-in">
-                <span className="w-1.5 h-1.5 rounded-full bg-electric shadow-[0_0_8px_#86868B] animate-pulse-blink" />
+              <span className="inline-flex items-center gap-2 self-start px-4 py-1.5 bg-foreground/[0.04] border border-black/[0.06] rounded-full text-[0.78rem] text-muted-foreground mb-8 animate-fade-in">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_10px_var(--gold)] animate-pulse-blink" />
                 {toolsMeta.total} outils testés • Mis à jour mai 2026
               </span>
 
@@ -65,7 +69,7 @@ export default function HomePage() {
                 </span>
               </h1>
 
-              <p className="mt-2 text-neutral-300 max-w-lg text-[1.05rem] leading-relaxed">
+              <p className="mt-2 text-muted-foreground max-w-lg text-[1.05rem] leading-relaxed">
                 Des comparatifs indépendants, honnêtes et détaillés. Nous testons chaque outil pour que vous n'ayez
                 pas à le faire.
               </p>
@@ -88,8 +92,24 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right content - 3D constellation of AI tool logos */}
+            {/* Right content — constellation now blends into the page bg
+                (Stone-50). A subtle gold aurora mesh + faint inset hairline
+                give it form without the dark panel. */}
             <div className="relative h-[420px] lg:h-[640px] w-full">
+              {/* Gold aurora — slow morph behind the globe */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none aurora-mesh"
+              />
+              {/* Soft inset hairline (rendered above bg, below globe) */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-6 rounded-full pointer-events-none"
+                style={{
+                  boxShadow:
+                    'inset 0 0 0 1px rgba(202,138,4,0.06), 0 40px 120px -40px rgba(202,138,4,0.18)',
+                }}
+              />
               <ToolsConstellation />
             </div>
           </div>
@@ -104,6 +124,9 @@ export default function HomePage() {
 
       {/* MARQUEE — infinite scrolling brands */}
       <LogosMarquee />
+
+      {/* TRUST BAR — editorial pledge + aggregate metrics */}
+      <TrustBar />
 
       {/* CATEGORIES */}
       <section id="categories" className="py-24">
@@ -153,6 +176,9 @@ export default function HomePage() {
       {/* STICKY SCROLL — méthode en 4 étapes */}
       <StickyScrollSection />
 
+      {/* PULL QUOTE — editorial breather */}
+      <PullQuoteSection />
+
       {/* TOP 3 */}
       <section className="py-24">
         <div className="container">
@@ -180,10 +206,13 @@ export default function HomePage() {
       {/* WHY US — bento grid */}
       <WhyBento />
 
+      {/* TESTIMONIALS — 3 editorial reader quotes */}
+      <TestimonialsWall />
+
       {/* STATS BAR */}
       <section className="py-12">
         <div className="container">
-          <div className="flex items-center justify-around flex-wrap gap-6 py-6 border-y border-white/[0.06]">
+          <div className="flex items-center justify-around flex-wrap gap-6 py-6 border-y border-black/[0.06]">
             <Inline num={toolsMeta.total} label="outils comparés" />
             <Inline num={toolsMeta.categories} label="catégories" />
             <Inline num={allArticles.length} label="articles experts" />
@@ -214,6 +243,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ — fluid morphing accordion */}
+      <FAQAccordion />
 
       {/* NEWSLETTER */}
       <section className="py-24">

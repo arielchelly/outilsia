@@ -189,9 +189,9 @@ export function ComparisonChart({ tools, limit = 5, className }: Props) {
                 onMouseLeave={() => setHovered(null)}
                 className={cn(
                   'group relative flex items-center gap-4 px-4 py-3 rounded-xl border text-left transition-all',
-                  'border-white/[0.06] bg-white/[0.015]',
-                  'hover:border-white/15 hover:bg-white/[0.04]',
-                  isActive && 'border-white/15 bg-white/[0.04]',
+                  'border-black/[0.06] bg-black/[0.02]',
+                  'hover:border-black/12 hover:bg-black/[0.04]',
+                  isActive && 'border-black/12 bg-black/[0.04]',
                   isOther && 'opacity-40'
                 )}
               >

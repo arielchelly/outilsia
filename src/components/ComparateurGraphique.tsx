@@ -125,14 +125,14 @@ export function ComparateurGraphique({ tools }: Props) {
             <button
               type="button"
               onClick={selectAll}
-              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(212, 184, 150,0.3)] transition uppercase tracking-wider"
+              className="px-3 py-1.5 rounded-full border border-black/10 text-muted-foreground hover:text-gold hover:border-[rgba(212, 184, 150,0.3)] transition uppercase tracking-wider"
             >
               Tout cocher
             </button>
             <button
               type="button"
               onClick={selectNone}
-              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-coral hover:border-coral/30 transition uppercase tracking-wider"
+              className="px-3 py-1.5 rounded-full border border-black/10 text-muted-foreground hover:text-coral hover:border-coral/30 transition uppercase tracking-wider"
             >
               Tout décocher
             </button>
@@ -151,8 +151,8 @@ export function ComparateurGraphique({ tools }: Props) {
                 className={cn(
                   'group inline-flex items-center gap-2.5 pl-2 pr-3.5 py-1.5 rounded-full border transition-all',
                   isOn
-                    ? 'bg-white/[0.04] text-foreground'
-                    : 'bg-white/[0.01] border-white/[0.06] text-muted-foreground/70 hover:border-white/15 hover:text-foreground'
+                    ? 'bg-black/[0.04] text-foreground'
+                    : 'bg-black/[0.015] border-black/[0.06] text-muted-foreground/70 hover:border-black/12 hover:text-foreground'
                 )}
                 style={
                   isOn ? { borderColor: color + '60', boxShadow: `0 0 0 1px ${color}25` } : undefined
@@ -170,7 +170,7 @@ export function ComparateurGraphique({ tools }: Props) {
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#0A0A0B"
+                      stroke="#FFFFFF"
                       strokeWidth={3}
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -190,7 +190,7 @@ export function ComparateurGraphique({ tools }: Props) {
 
       {/* Chart */}
       <div
-        className="rounded-2xl border border-white/[0.06] p-4 sm:p-6 overflow-x-auto"
+        className="rounded-2xl border border-black/[0.06] p-4 sm:p-6 overflow-x-auto"
         style={{ background: '#0A0A0B' }}
       >
         <div className="min-w-[640px]">

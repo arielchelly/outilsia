@@ -124,7 +124,7 @@ export default async function ArticlePage({ params }: Props) {
               <h2 className="heading-display text-[2rem] mb-6">Questions fréquentes</h2>
               <div className="flex flex-col gap-3">
                 {article.faqs.map((f, i) => (
-                  <details key={i} className="bg-elevated border border-white/[0.06] rounded-md p-5 group">
+                  <details key={i} className="bg-elevated border border-black/[0.06] rounded-md p-5 group">
                     <summary className="cursor-pointer font-medium text-foreground text-[1.02rem] list-none flex items-center justify-between">
                       {f.q}
                       <span className="text-gold ml-4 transition-transform group-open:rotate-45">+</span>

@@ -46,13 +46,24 @@ const SOCIALS = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/[0.06] pt-24 pb-10 mt-24 relative">
+    <footer className="relative pt-24 pb-10 mt-24 border-t border-black/[0.06] bg-surface/50">
+      {/* Refined gradient hairline at the top */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-px"
+        style={{
+          background:
+            'linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--gold) 75%, transparent 100%)',
+          opacity: 0.5,
+        }}
+      />
       <div className="container">
         {/* Editorial line above the grid — gives gravitas */}
-        <div className="mb-16 max-w-2xl">
-          <p className="font-display italic text-[1.5rem] sm:text-[1.8rem] text-foreground/90 leading-tight">
-            Le comparatif de référence des outils IA <span className="text-gold not-italic">en français</span>.
-            Indépendant, exigeant, à jour.
+        <div className="mb-20 max-w-3xl">
+          <span className="eyebrow block mb-5">Édition 2026</span>
+          <p className="font-display text-[clamp(1.6rem,3vw,2.4rem)] text-foreground/90 leading-[1.15] tracking-[-0.02em] text-balance">
+            Le comparatif de référence des outils IA{' '}
+            <span className="italic text-gold">en français</span>. Indépendant, exigeant, à jour chaque mois.
           </p>
         </div>
 
@@ -62,7 +73,7 @@ export function SiteFooter() {
               href="/"
               className="font-display font-normal text-[1.6rem] tracking-tight text-gold flex items-center gap-2"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_10px_#D4B896]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_10px_var(--gold)]" />
               TopOutils<span className="text-muted-foreground">.</span>IA
             </Link>
             <p className="mt-5 text-[0.9rem] text-muted-foreground leading-relaxed">
@@ -77,7 +88,7 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noopener"
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/40 hover:bg-[rgba(212, 184, 150,0.08)] transition-all"
+                  className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/40 hover:bg-[rgba(212, 184, 150,0.08)] transition-all"
                 >
                   {s.icon}
                 </a>
@@ -150,7 +161,7 @@ export function SiteFooter() {
           peut acheter une bonne note. Nos évaluations restent 100% indépendantes.
         </p>
 
-        <div className="pt-8 border-t border-white/[0.06] flex flex-wrap items-center justify-between gap-4 text-[0.78rem] text-muted-foreground/60">
+        <div className="pt-8 border-t border-black/[0.06] flex flex-wrap items-center justify-between gap-4 text-[0.78rem] text-muted-foreground/60">
           <p>© 2026 TopOutils.IA — Tous droits réservés.</p>
           <p>Fait avec soin en 🇫🇷</p>
         </div>

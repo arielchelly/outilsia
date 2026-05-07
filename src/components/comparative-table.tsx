@@ -73,8 +73,8 @@ export function ComparativeTable({ tools, category: _category }: Props) {
   }
 
   return (
-    <div className="bg-surface border border-white/[0.06] rounded-2xl overflow-hidden">
-      <div className="flex items-center gap-4 p-4 border-b border-white/[0.06] bg-elevated flex-wrap">
+    <div className="bg-surface border border-black/[0.06] rounded-2xl overflow-hidden">
+      <div className="flex items-center gap-4 p-4 border-b border-black/[0.06] bg-elevated flex-wrap">
         <div className="flex-1 min-w-[200px] relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground/60 pointer-events-none">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -87,7 +87,7 @@ export function ComparativeTable({ tools, category: _category }: Props) {
             placeholder="Rechercher un outil…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-void border border-white/15 rounded-md pl-9 pr-3 py-2 text-foreground text-[0.88rem] focus:outline-none focus:border-gold"
+            className="w-full bg-void border border-black/12 rounded-md pl-9 pr-3 py-2 text-foreground text-[0.88rem] focus:outline-none focus:border-gold"
           />
         </div>
         <div className="flex gap-2 flex-wrap">
@@ -126,7 +126,7 @@ export function ComparativeTable({ tools, category: _category }: Props) {
               <tr
                 key={tool.id}
                 className={cn(
-                  'border-t border-white/[0.06] hover:bg-elevated/60 transition',
+                  'border-t border-black/[0.06] hover:bg-elevated/60 transition',
                   tool.is_recommended && 'relative'
                 )}
               >
@@ -227,7 +227,7 @@ function FilterChip({
         'px-3.5 py-1.5 border rounded-full text-[0.78rem] transition',
         active
           ? 'bg-[rgba(212, 184, 150,0.15)] text-gold border-[rgba(212, 184, 150,0.3)]'
-          : 'border-white/15 text-muted-foreground hover:border-gold hover:text-gold'
+          : 'border-black/12 text-muted-foreground hover:border-gold hover:text-gold'
       )}
     >
       {children}

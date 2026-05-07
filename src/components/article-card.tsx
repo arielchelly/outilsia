@@ -5,7 +5,7 @@ export function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/blog/${article.slug}`}
-      className="group bg-white/[0.015] border border-white/[0.06] rounded-2xl overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-1 hover:border-[rgba(212, 184, 150,0.25)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_30px_rgba(212, 184, 150,0.06)]"
+      className="group bg-black/[0.02] border border-black/[0.06] rounded-2xl overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-1 hover:border-[rgba(212, 184, 150,0.25)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_30px_rgba(212, 184, 150,0.06)]"
     >
       <div className="aspect-[16/9] bg-elevated relative overflow-hidden">
         <svg

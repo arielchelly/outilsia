@@ -264,7 +264,7 @@ function ProgressDots({ activeStep, visible }: { activeStep: number; visible: bo
 function Visual({ gradient, icon }: { gradient: string; icon: 'test' | 'compare' | 'rate' | 'publish' }) {
   return (
     <div
-      className={`relative w-full h-full rounded-2xl border border-white/[0.08] bg-elevated overflow-hidden flex items-center justify-center`}
+      className={`relative w-full h-full rounded-2xl border border-black/[0.08] bg-elevated overflow-hidden flex items-center justify-center`}
     >
       <div className={`absolute inset-0 bg-gradient-to-br ${gradient}`} />
       <div className="absolute inset-0 opacity-[0.025] [background:radial-gradient(circle_at_50%_50%,_white_1px,_transparent_1px)] [background-size:16px_16px]" />

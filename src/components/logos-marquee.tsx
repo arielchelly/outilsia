@@ -57,7 +57,7 @@ function Marquee({ items, duration, direction }: MarqueeProps) {
         {doubled.map((brand, i) => (
           <li
             key={`${brand.domain}-${i}`}
-            className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm transition-colors hover:border-[rgba(212, 184, 150,0.25)] hover:bg-white/[0.04]"
+            className="flex items-center gap-3 px-5 py-3 rounded-xl bg-black/[0.025] border border-black/[0.06] backdrop-blur-sm transition-colors hover:border-[rgba(212, 184, 150,0.25)] hover:bg-black/[0.04]"
           >
             <span className="w-8 h-8 rounded-md bg-white overflow-hidden flex items-center justify-center flex-shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}

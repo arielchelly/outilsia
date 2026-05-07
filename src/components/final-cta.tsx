@@ -45,7 +45,7 @@ export function FinalCTA() {
             />
 
             <div className="relative px-8 py-16 md:px-16 md:py-24 text-center">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-elevated/60 backdrop-blur border border-white/10 rounded-full text-[0.72rem] uppercase tracking-[0.2em] text-gold mb-8">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-elevated/60 backdrop-blur border border-black/10 rounded-full text-[0.72rem] uppercase tracking-[0.2em] text-gold mb-8">
                 <span className="w-1.5 h-1.5 rounded-full bg-mint shadow-[0_0_10px_#86868B]" />
                 Mis à jour en mai 2026
               </span>

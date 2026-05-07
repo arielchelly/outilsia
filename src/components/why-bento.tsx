@@ -85,8 +85,8 @@ export function WhyBento() {
             <Reveal key={it.accent} delay={i * 80} className={cn('contents')}>
               <article
                 className={cn(
-                  'relative bg-white/[0.015] border border-white/[0.06] rounded-3xl p-8 overflow-hidden transition-all duration-500',
-                  'hover:border-[rgba(212, 184, 150,0.25)] hover:bg-white/[0.025]',
+                  'relative bg-black/[0.02] border border-black/[0.06] rounded-3xl p-8 overflow-hidden transition-all duration-500',
+                  'hover:border-[rgba(212, 184, 150,0.25)] hover:bg-black/[0.03]',
                   it.span
                 )}
               >

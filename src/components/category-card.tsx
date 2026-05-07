@@ -42,9 +42,9 @@ export function CategoryCard({ slug, label, description, toolCount, isFeature, c
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       className={cn(
-        'group relative overflow-hidden rounded-3xl border border-white/[0.06] transition-colors duration-500 block',
+        'group relative overflow-hidden rounded-3xl border border-black/[0.06] transition-colors duration-500 block',
         'hover:border-[rgba(212, 184, 150,0.3)]',
-        'bg-white/[0.015]',
+        'bg-black/[0.02]',
         isFeature ? 'min-h-[280px] p-8' : 'min-h-[180px] p-6',
         'flex flex-col justify-between h-full',
         className

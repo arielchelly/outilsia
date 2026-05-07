@@ -4,54 +4,55 @@
 
 @layer base {
   :root {
-    /* shadcn semantic tokens — Apple-clean palette
-       (neutral near-black + Apple system text + muted sand accent) */
-    --background: 240 6% 4%;         /* #0A0A0B */
-    --foreground: 240 9% 96%;        /* #F5F5F7 — Apple text white */
-    --card: 240 8% 6%;               /* #0F0F11 */
-    --card-foreground: 240 9% 96%;
-    --popover: 240 8% 9%;            /* #16161A */
-    --popover-foreground: 240 9% 96%;
-    --primary: 38 35% 71%;           /* #D4B896 — muted sand */
-    --primary-foreground: 240 6% 4%;
-    --secondary: 240 5% 11%;
-    --secondary-foreground: 240 9% 96%;
-    --muted: 240 5% 13%;
-    --muted-foreground: 240 4% 53%;  /* #86868B — Apple gray */
-    --accent: 38 35% 71%;
-    --accent-foreground: 240 6% 4%;
-    --destructive: 4 100% 62%;       /* Apple red */
-    --destructive-foreground: 240 9% 96%;
-    --border: 240 5% 16%;
-    --input: 240 5% 14%;
-    --ring: 38 35% 71%;
-    --radius: 0.75rem;
+    /* shadcn semantic tokens — Editorial Premium v5
+       Validated by UI/UX Pro Max skill: "Luxury/Premium" reference palette
+       for review/comparison sites. Stone-warm + premium gold + AAA contrast. */
+    --background: 60 9% 98%;         /* #FAFAF9 — Stone-50 */
+    --foreground: 24 10% 4%;         /* #0C0A09 — Stone-950 */
+    --card: 60 5% 96%;               /* #F5F5F4 — Stone-100 */
+    --card-foreground: 24 10% 4%;
+    --popover: 30 7% 91%;            /* #E7E5E4 — Stone-200 */
+    --popover-foreground: 24 10% 4%;
+    --primary: 36 96% 41%;           /* #CA8A04 — amber-700 premium gold */
+    --primary-foreground: 60 9% 98%;
+    --secondary: 60 5% 96%;
+    --secondary-foreground: 24 10% 4%;
+    --muted: 60 5% 96%;
+    --muted-foreground: 24 6% 28%;   /* #44403C — Stone-700 (AAA on bg) */
+    --accent: 36 96% 41%;
+    --accent-foreground: 60 9% 98%;
+    --destructive: 0 73% 41%;        /* #B91C1C — red-700 */
+    --destructive-foreground: 60 9% 98%;
+    --border: 30 7% 91%;             /* Stone-200 */
+    --input: 30 7% 91%;
+    --ring: 36 96% 41%;
+    --radius: 0.5rem;
 
-    /* Brand tokens (utility) — `--gold` kept for compat, resolves to sand. */
-    --gold: #D4B896;
-    --gold-deep: #A89570;
-    --gold-bright: #E5CFAE;
-    --gold-glow: rgba(212, 184, 150, 0.12);
-    --sand: #D4B896;
-    --sage: #86868B;
-    --electric: #86868B;
-    --coral: #FF453A;
-    --sky: #86868B;
-    --cream: #F5F5F7;
+    /* Brand tokens — `--gold` resolves to amber-700 (#CA8A04) */
+    --gold: #CA8A04;
+    --gold-deep: #A16207;
+    --gold-bright: #EAB308;
+    --gold-glow: rgba(202, 138, 4, 0.14);
+    --sand: #CA8A04;
+    --sage: #15803D;
+    --electric: #15803D;
+    --coral: #B91C1C;
+    --sky: #44403C;
+    --cream: #0C0A09;
 
-    /* Backgrounds — neutral near-black, nearly identical for visual unity */
-    --bg-void: #0A0A0B;
-    --bg-surface: #0F0F11;
-    --bg-elevated: #16161A;
-    --bg-overlay: #1C1C20;
+    /* Backgrounds — Stone-warm register (not clinical white) */
+    --bg-void: #FAFAF9;
+    --bg-surface: #F5F5F4;
+    --bg-elevated: #E7E5E4;
+    --bg-overlay: #D6D3D1;
 
-    --text-primary: #F5F5F7;
-    --text-secondary: #86868B;
-    --text-muted: #6E6E73;
+    --text-primary: #0C0A09;
+    --text-secondary: #44403C;       /* AAA contrast on bg */
+    --text-muted: #78716C;
 
-    --border-subtle: rgba(245, 245, 247, 0.06);
-    --border-medium: rgba(245, 245, 247, 0.10);
-    --border-gold: rgba(212, 184, 150, 0.22);
+    --border-subtle: rgba(12, 10, 9, 0.06);
+    --border-medium: rgba(12, 10, 9, 0.10);
+    --border-gold: rgba(202, 138, 4, 0.30);
   }
 
   * {
@@ -59,7 +60,7 @@
   }
 
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
@@ -70,7 +71,7 @@
 
   ::selection {
     background: var(--gold);
-    color: var(--bg-void);
+    color: #FFFFFF;
   }
 
   /* Skip-link — keyboard users press Tab on page load to access main content. */
@@ -100,16 +101,16 @@
     border-radius: 4px;
   }
 
-  /* Subtle noise overlay (much fainter than before) */
+  /* Paper grain — extremely subtle texture (warm noise on white) */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.012;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-    background-size: 200px 200px;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0 0.30 0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 280px 280px;
   }
 
   /* macOS Big Sur cursors (apple_cursor / ful1e5).
@@ -138,30 +139,80 @@
   .heading-display {
     font-family: var(--font-display), Georgia, serif;
     font-weight: 400;
-    letter-spacing: -0.025em;
-    line-height: 1.02;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  /* Exaggerated Minimalism — UI/UX Pro Max recommendation. Massive editorial
+     hero scale (clamp 3rem → 12rem per the skill's design-system variables). */
+  .heading-display-xl {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-size: clamp(3rem, 10vw, 9rem);
+  }
+  /* Pull quote — Editorial Grid pattern (skill var: --pull-quote-size: 1.5em) */
+  .pull-quote {
+    font-family: var(--font-display), Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.75rem;
+    margin: 2.5rem 0;
+  }
+  /* Asymmetric editorial grid — 12 cols at lg, 1.6:1 golden ratio columns */
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 1024px) {
+    .editorial-grid {
+      grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
+      gap: 4rem;
+    }
   }
   .label {
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 0.7rem;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--text-secondary);
   }
   .eyebrow {
-    font-family: var(--font-body);
+    font-family: var(--font-mono), monospace;
     font-weight: 500;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
     color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
   }
   .lead {
     font-size: 1.2rem;
     line-height: 1.65;
     color: var(--text-secondary);
     font-weight: 300;
+    letter-spacing: -0.005em;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
   }
   .container-narrow {
     width: 100%;
@@ -178,9 +229,94 @@
     width: 1400px;
     max-width: 100%;
     height: 1100px;
-    background: radial-gradient(ellipse at center, rgba(212, 184, 150, 0.09) 0%, rgba(212, 184, 150, 0.035) 35%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(202, 138, 4, 0.10) 0%, rgba(202, 138, 4, 0.04) 35%, transparent 70%);
     pointer-events: none;
   }
+
+  /* Aurora mesh — morphing gold aurora behind the constellation. Slow,
+     liquid (Liquid Glass-inspired), respects prefers-reduced-motion. */
+  .aurora-mesh {
+    background:
+      radial-gradient(ellipse 70% 60% at 30% 25%, rgba(202, 138, 4, 0.16) 0%, transparent 55%),
+      radial-gradient(ellipse 65% 55% at 75% 70%, rgba(234, 179, 8, 0.13) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 50% at 50% 45%, rgba(161, 98, 7, 0.10) 0%, transparent 60%);
+    filter: blur(40px) saturate(115%);
+    animation: aurora-morph 18s ease-in-out infinite alternate;
+  }
+  @keyframes aurora-morph {
+    0%   { transform: translate3d(0, 0, 0) scale(1);    opacity: 0.85; }
+    50%  { transform: translate3d(2%, -1%, 0) scale(1.04); opacity: 1; }
+    100% { transform: translate3d(-1%, 2%, 0) scale(0.98); opacity: 0.9; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .aurora-mesh { animation: none; }
+  }
+
+  /* Frosted glass card — Liquid Glass + Spatial UI hybrid. AAA contrast
+     preserved by keeping bg ≥ 80% opacity in light mode + visible border. */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(12, 10, 9, 0.06);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 1px 2px rgba(12, 10, 9, 0.04),
+      0 12px 40px -16px rgba(12, 10, 9, 0.10);
+    border-radius: 1.5rem;
+    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 300ms ease;
+  }
+  .glass-card:hover {
+    border-color: rgba(202, 138, 4, 0.20);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.95) inset,
+      0 4px 12px rgba(12, 10, 9, 0.06),
+      0 24px 64px -20px rgba(202, 138, 4, 0.18);
+  }
+
+  /* Magazine numbering — huge italic Fraunces digits used as accent on
+     ranked content (Top-3, methodology steps). Decorative, aria-hidden. */
+  .magazine-numeral {
+    font-family: var(--font-display), Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(6rem, 14vw, 14rem);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.18;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* Liquid CTA — gold button with subtle morphing sheen. Editorial premium.
+     mix-blend-mode lets the sheen highlight pass over text without obscuring. */
+  .cta-liquid {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .cta-liquid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 70%
+    );
+    mix-blend-mode: overlay;
+    transform: translateX(-110%);
+    transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+  .cta-liquid:hover::after { transform: translateX(110%); }
 }
 
 /* Spline loader */
@@ -196,26 +332,55 @@
   to { transform: rotate(360deg); }
 }
 
-/* Article prose */
+/* Article prose — editorial, magazine feel */
 .article-prose {
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   line-height: 1.8;
   color: var(--text-secondary);
+  letter-spacing: -0.005em;
+}
+.article-prose > p:first-of-type::first-letter {
+  /* Drop cap on the first paragraph — quiet luxury touch */
+  font-family: var(--font-display);
+  font-size: 4.4rem;
+  line-height: 0.85;
+  float: left;
+  margin: 0.4rem 0.65rem -0.2rem 0;
+  color: var(--gold);
+  font-style: italic;
 }
 .article-prose h2 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 2.25rem;
   color: var(--text-primary);
-  margin: 2.5rem 0 1rem;
-  line-height: 1.2;
+  margin: 3rem 0 1rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 .article-prose h3 {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 1.25rem;
   color: var(--text-primary);
-  margin: 2rem 0 0.75rem;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.015em;
+}
+.article-prose blockquote {
+  border-left: 2px solid var(--gold);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 1.75rem 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+.article-prose hr {
+  border: 0;
+  border-top: 1px solid var(--border-subtle);
+  margin: 2.5rem auto;
+  width: 60%;
 }
 .article-prose p { margin-bottom: 1.25rem; }
 .article-prose ul, .article-prose ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }

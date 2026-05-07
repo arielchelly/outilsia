@@ -71,7 +71,7 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
   return (
     <div className={cn('w-full', className)}>
       {/* Criterion pills */}
-      <div className="overflow-x-auto -mx-2 px-2 pb-3 mb-6 border-b border-white/[0.06]">
+      <div className="overflow-x-auto -mx-2 px-2 pb-3 mb-6 border-b border-black/[0.06]">
         <div className="flex gap-2 min-w-max">
           {DIMENSIONS.map((d) => {
             const active = activeDim === d.key;
@@ -82,8 +82,8 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
                 className={cn(
                   'px-4 py-2 rounded-full text-[0.78rem] uppercase tracking-[0.12em] font-medium transition-all whitespace-nowrap',
                   active
-                    ? 'bg-gold text-void shadow-[0_4px_18px_rgba(212, 184, 150,0.3)]'
-                    : 'bg-white/[0.02] text-muted-foreground border border-white/[0.06] hover:border-[rgba(212, 184, 150,0.3)] hover:text-gold'
+                    ? 'bg-gold text-white shadow-[0_4px_18px_rgba(212, 184, 150,0.3)]'
+                    : 'bg-black/[0.025] text-muted-foreground border border-black/[0.06] hover:border-[rgba(212, 184, 150,0.3)] hover:text-gold'
                 )}
               >
                 {d.short}
@@ -102,19 +102,19 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
           <div className="flex gap-2 text-[0.72rem]">
             <button
               onClick={() => selectTopN(5)}
-              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(212, 184, 150,0.3)] transition uppercase tracking-wider"
+              className="px-3 py-1.5 rounded-full border border-black/10 text-muted-foreground hover:text-gold hover:border-[rgba(212, 184, 150,0.3)] transition uppercase tracking-wider"
             >
               Top 5
             </button>
             <button
               onClick={selectAll}
-              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-gold hover:border-[rgba(212, 184, 150,0.3)] transition uppercase tracking-wider"
+              className="px-3 py-1.5 rounded-full border border-black/10 text-muted-foreground hover:text-gold hover:border-[rgba(212, 184, 150,0.3)] transition uppercase tracking-wider"
             >
               Tous
             </button>
             <button
               onClick={selectNone}
-              className="px-3 py-1.5 rounded-full border border-white/10 text-muted-foreground hover:text-coral hover:border-coral/30 transition uppercase tracking-wider"
+              className="px-3 py-1.5 rounded-full border border-black/10 text-muted-foreground hover:text-coral hover:border-coral/30 transition uppercase tracking-wider"
             >
               Aucun
             </button>
@@ -131,21 +131,21 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
                   'group inline-flex items-center gap-2.5 pl-2 pr-3.5 py-1.5 rounded-full border transition-all',
                   isOn
                     ? 'bg-[rgba(212, 184, 150,0.10)] border-[rgba(212, 184, 150,0.4)] text-foreground'
-                    : 'bg-white/[0.02] border-white/[0.06] text-muted-foreground/70 hover:border-white/15 hover:text-foreground'
+                    : 'bg-black/[0.025] border-black/[0.06] text-muted-foreground/70 hover:border-black/12 hover:text-foreground'
                 )}
               >
                 <span className="relative w-5 h-5 flex items-center justify-center">
                   <span
                     className={cn(
                       'absolute inset-0 rounded-full border transition-all',
-                      isOn ? 'bg-gold border-gold' : 'border-white/20 bg-transparent'
+                      isOn ? 'bg-gold border-gold' : 'border-black/15 bg-transparent'
                     )}
                   />
                   {isOn && (
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#0A0A0B"
+                      stroke="#FFFFFF"
                       strokeWidth={3}
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -193,7 +193,7 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
                       onMouseLeave={() => setHoveredId(null)}
                       className={cn(
                         'group grid items-center gap-4 px-4 py-4 rounded-2xl border cursor-default',
-                        'border-white/[0.06] bg-white/[0.015] hover:border-white/15 hover:bg-white/[0.04]',
+                        'border-black/[0.06] bg-black/[0.02] hover:border-black/12 hover:bg-black/[0.04]',
                         isLeader && 'border-[rgba(212, 184, 150,0.3)] bg-[rgba(212, 184, 150,0.025)]',
                         isDimmed && 'opacity-40'
                       )}
@@ -235,12 +235,12 @@ export function ComparisonBars({ tools, defaultLimit = 5, className }: Props) {
 
                       {/* Animated horizontal bar — STRETCHES to fill */}
                       <div className="flex flex-col gap-1 min-w-0">
-                        <div className="relative h-2.5 bg-white/[0.04] rounded-full overflow-hidden">
+                        <div className="relative h-2.5 bg-black/[0.04] rounded-full overflow-hidden">
                           {/* Tick marks */}
                           {[1, 2, 3, 4].map((tick) => (
                             <span
                               key={tick}
-                              className="absolute top-0 bottom-0 w-px bg-white/[0.06]"
+                              className="absolute top-0 bottom-0 w-px bg-black/[0.05]"
                               style={{ left: `${(tick / MAX_SCORE) * 100}%` }}
                             />
                           ))}

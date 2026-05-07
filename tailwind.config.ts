@@ -25,28 +25,29 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        // Brand — "Apple-clean" palette.
-        // Near-black backgrounds, Apple system text, ONE muted sand accent
-        // used very sparingly. Class name `gold` kept for component compat —
-        // it now resolves to a restrained sand tone.
+        // Brand — "Editorial Premium v5" palette (validated by UI/UX Pro Max
+        // skill against the "Luxury/Premium" reference for review/comparison
+        // sites). Stone-warm neutrals + premium gold CTA. Reads as Wirecutter
+        // meets Stripe Press in French. AAA contrast on body text.
+        // The `gold` class name maps to the premium amber-gold #CA8A04.
         gold: {
-          DEFAULT: '#D4B896',   // muted sand — restrained accent
-          deep: '#A89570',
-          bright: '#E5CFAE',
+          DEFAULT: '#CA8A04',   // amber-700 — premium CTA gold
+          deep: '#A16207',       // amber-800 — pressed state
+          bright: '#EAB308',     // amber-500 — hover highlight
         },
-        cream: '#F5F5F7',         // Apple text white
-        sand: '#D4B896',
-        sage: '#86868B',          // Apple system gray
-        amber: '#D4B896',
-        mint: '#86868B',
-        electric: '#86868B',
-        coral: '#FF453A',         // Apple system red (rare destructive)
-        sky: '#86868B',
-        // Backgrounds — neutral near-black, Apple-like restraint.
-        void: '#0A0A0B',
-        surface: '#0F0F11',
-        elevated: '#16161A',
-        overlay: '#1C1C20',
+        cream: '#0C0A09',         // Stone-950 — text (legacy alias inverted)
+        sand: '#CA8A04',
+        sage: '#15803D',          // emerald-700 — verified / positive
+        amber: '#CA8A04',
+        mint: '#15803D',
+        electric: '#15803D',
+        coral: '#B91C1C',         // red-700 — destructive
+        sky: '#44403C',           // Stone-700 — secondary muted
+        // Backgrounds — Stone-warm neutrals (off-white paper, not clinical).
+        void: '#FAFAF9',          // Stone-50 — page bg (warm off-white)
+        surface: '#F5F5F4',       // Stone-100 — card bg
+        elevated: '#E7E5E4',      // Stone-200 — popover / inner card
+        overlay: '#D6D3D1',       // Stone-300 — hover overlay
       },
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],

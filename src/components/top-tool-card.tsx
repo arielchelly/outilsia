@@ -13,19 +13,26 @@ export function TopToolCard({ tool, rank, isFirst }: { tool: Tool; rank: number;
   return (
     <article
       className={cn(
-        'relative rounded-2xl p-8 grid items-center gap-8 overflow-hidden border transition-all',
+        'relative rounded-3xl p-8 grid items-center gap-8 overflow-hidden border transition-all duration-500',
         'grid-cols-1 lg:grid-cols-[auto_1fr_auto]',
         isFirst
-          ? 'border-[rgba(212, 184, 150,0.3)] bg-gradient-to-br from-elevated to-surface shadow-[0_0_60px_rgba(212, 184, 150,0.08)]'
-          : 'bg-surface border-white/[0.06] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
+          ? 'pt-16 lg:pt-8 border-gold/25 bg-gradient-to-br from-white via-elevated/40 to-surface shadow-[0_24px_72px_-24px_rgba(202,138,4,0.22),0_4px_12px_rgba(12,10,9,0.04)] hover:border-gold/40'
+          : 'bg-white/70 backdrop-blur-md border-black/[0.06] hover:border-gold/25 hover:shadow-[0_18px_48px_-18px_rgba(202,138,4,0.18)]'
       )}
     >
-      <span
-        className="absolute font-display font-normal leading-none text-[11rem] text-muted-foreground/10 -top-6 -left-4 pointer-events-none select-none"
-        aria-hidden="true"
-      >
+      {/* Magazine numeral — huge italic gold gradient digits */}
+      <span className="magazine-numeral absolute -top-6 -right-2 lg:-right-4" aria-hidden="true">
         {String(rank).padStart(2, '0')}
       </span>
+      {/* Gold ribbon for #1 */}
+      {isFirst && (
+        <span className="absolute top-6 left-6 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold text-white text-[0.62rem] font-medium uppercase tracking-[0.18em] shadow-[0_4px_12px_rgba(202,138,4,0.3)]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3" aria-hidden="true">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" />
+          </svg>
+          Choix de la rédaction
+        </span>
+      )}
 
       <div className="flex items-center gap-6 relative">
         <ToolLogo tool={tool} name={tool.name} size={64} />

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif } from 'next/font/google';
+import { Fraunces } from 'next/font/google';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { SiteHeader } from '@/components/site-header';
@@ -11,12 +11,15 @@ import { Toaster } from '@/components/ui/toaster';
 import { SITE_NAME, SITE_URL } from '@/lib/data';
 import './globals.css';
 
-const display = Instrument_Serif({
+// Fraunces — variable serif used by Stripe Press, Tailwind Labs blog, etc.
+// Premium, warm, with a beautiful italic. Loaded as the variable build so all
+// weight/style/opsz combinations are available without separate fetches.
+const display = Fraunces({
   subsets: ['latin'],
-  weight: ['400'],
   style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
+  axes: ['opsz', 'SOFT'],
 });
 
 export const metadata: Metadata = {

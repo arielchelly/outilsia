@@ -51,7 +51,7 @@ export function ToolLogo({ src, tool, name, size = 48, className }: ToolLogoProp
     return (
       <span
         className={cn(
-          'inline-flex items-center justify-center bg-overlay border border-white/10 rounded-md text-gold font-display select-none',
+          'inline-flex items-center justify-center bg-overlay border border-black/10 rounded-md text-gold font-display select-none',
           className
         )}
         style={{ width: size, height: size, fontSize: size * 0.5 }}
@@ -65,7 +65,7 @@ export function ToolLogo({ src, tool, name, size = 48, className }: ToolLogoProp
   return (
     <span
       className={cn(
-        'inline-flex items-center justify-center bg-overlay border border-white/10 rounded-md overflow-hidden',
+        'inline-flex items-center justify-center bg-overlay border border-black/10 rounded-md overflow-hidden',
         className
       )}
       style={{ width: size, height: size }}

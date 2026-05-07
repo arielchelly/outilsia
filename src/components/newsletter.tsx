@@ -75,7 +75,7 @@ export function Newsletter({
             placeholder="vous@email.com"
             required
             aria-label="Adresse email"
-            className="flex-1 bg-void border border-white/15 rounded-md px-4 py-3 text-foreground text-[0.95rem] focus:outline-none focus:border-gold"
+            className="flex-1 bg-void border border-black/12 rounded-md px-4 py-3 text-foreground text-[0.95rem] focus:outline-none focus:border-gold"
           />
           <Button variant="primary" type="submit" disabled={status === 'loading'}>
             {status === 'loading' ? 'Envoi…' : "S'abonner"}

@@ -20,19 +20,20 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 h-[72px] flex items-center transition-all duration-300',
+        'fixed inset-x-0 top-0 z-50 h-[68px] flex items-center transition-all duration-500',
         scrolled
-          ? 'bg-void/70 backdrop-blur-xl backdrop-saturate-150 border-b border-white/[0.06]'
-          : 'bg-transparent'
+          ? 'bg-white/85 backdrop-blur-2xl backdrop-saturate-150 border-b border-black/[0.06] shadow-[0_1px_3px_rgba(0,0,0,0.04)]'
+          : 'bg-white/40 backdrop-blur-sm'
       )}
     >
       <div className="container flex items-center justify-between">
         <Link
           href="/"
-          className="font-display font-normal text-[1.45rem] tracking-tight text-gold flex items-center gap-1.5"
+          className="font-display font-normal text-[1.5rem] tracking-[-0.02em] text-foreground flex items-center gap-2 hover:text-gold transition-colors"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_12px_#D4B896]" />
-          TopOutils<span className="text-muted-foreground">.</span>IA
+          <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_12px_var(--gold)]" />
+          TopOutils<span className="text-muted-foreground/60">.</span>
+          <span className="italic text-gold">IA</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-[0.92rem] text-muted-foreground">
@@ -55,7 +56,7 @@ export function SiteHeader() {
             </button>
             {dropdownOpen && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[480px]">
-                <div className="bg-elevated border border-white/[0.12] rounded-2xl p-4 grid grid-cols-2 gap-1 shadow-[0_16px_48px_rgba(0,0,0,0.5)]">
+                <div className="bg-elevated border border-black/[0.10] rounded-2xl p-4 grid grid-cols-2 gap-1 shadow-[0_16px_48px_rgba(0,0,0,0.5)]">
                   {CATEGORY_SLUGS.map((slug) => (
                     <Link
                       key={slug}
@@ -83,7 +84,7 @@ export function SiteHeader() {
           </Link>
           <Link
             href="/#newsletter"
-            className="border border-white/15 rounded-md px-4 py-2 text-foreground hover:border-gold hover:text-gold hover:bg-[rgba(212, 184, 150,0.08)] transition text-xs"
+            className="bg-foreground text-background rounded-full px-5 py-2 hover:bg-gold transition-all duration-300 text-xs uppercase tracking-[0.12em] font-medium"
           >
             Newsletter
           </Link>
