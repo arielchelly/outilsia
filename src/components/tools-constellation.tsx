@@ -311,6 +311,7 @@ export function ToolsConstellation() {
           style={{
             width: LOGO_SIZE,
             height: LOGO_SIZE,
+            opacity: 0,
             transition: 'opacity 0.4s ease, filter 0.4s ease',
           }}
           title={s.name}

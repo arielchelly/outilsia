@@ -62,13 +62,13 @@ export default function HomePage() {
 
               <h1 className="text-4xl md:text-5xl lg:text-[4.2rem] font-normal leading-[1.02] mb-6 font-display tracking-[-0.025em]">
                 <span className="block text-foreground">
-                  <AnimatedText text="Trouvez l'outil IA" startDelay={0.15} />
+                  <AnimatedText text="Trouvez l'outil IA" startDelay={0} />
                 </span>
                 <span className="block italic text-gold">
-                  <AnimatedText text="parfait." startDelay={0.55} />
+                  <AnimatedText text="parfait." startDelay={0.12} />
                 </span>
                 <span className="block text-foreground">
-                  <AnimatedText text="En français." startDelay={0.75} />
+                  <AnimatedText text="En français." startDelay={0.22} />
                 </span>
               </h1>
 
