@@ -17,6 +17,9 @@ import { TrustBar } from '@/components/trust-bar';
 import { TestimonialsWall } from '@/components/testimonials-wall';
 import { FAQAccordion } from '@/components/faq-accordion';
 import { PullQuoteSection } from '@/components/pull-quote-section';
+import { PressMentions } from '@/components/press-mentions';
+import { AnimatedStats } from '@/components/animated-stats';
+import { InteractiveComparator } from '@/components/interactive-comparator';
 import dynamic from 'next/dynamic';
 // Below-fold + heavy (Framer Motion + 4 sticky panels) — lazy-load so it
 // doesn't block initial render or compete with the constellation for CPU.
@@ -128,6 +131,9 @@ export default function HomePage() {
       {/* TRUST BAR — editorial pledge + aggregate metrics */}
       <TrustBar />
 
+      {/* PRESS MENTIONS — French media credibility strip */}
+      <PressMentions />
+
       {/* CATEGORIES */}
       <section id="categories" className="py-24">
         <div className="container">
@@ -206,8 +212,14 @@ export default function HomePage() {
       {/* WHY US — bento grid */}
       <WhyBento />
 
+      {/* INTERACTIVE COMPARATOR — face-à-face entre 2 outils */}
+      <InteractiveComparator />
+
       {/* TESTIMONIALS — 3 editorial reader quotes */}
       <TestimonialsWall />
+
+      {/* ANIMATED STATS — count-up metrics on scroll */}
+      <AnimatedStats />
 
       {/* STATS BAR */}
       <section className="py-12">

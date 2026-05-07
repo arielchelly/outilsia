@@ -7,6 +7,8 @@ import { SiteFooter } from '@/components/site-footer';
 import { CookieBanner } from '@/components/cookie-banner';
 import { GlobalMouseGlow } from '@/components/global-mouse-glow';
 import { SmoothScroll } from '@/components/smooth-scroll';
+import { WebGLBackground } from '@/components/webgl-background';
+import { FloatingAction } from '@/components/floating-action';
 import { Toaster } from '@/components/ui/toaster';
 import { SITE_NAME, SITE_URL } from '@/lib/data';
 import './globals.css';
@@ -163,10 +165,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Aller au contenu principal
         </a>
         <SmoothScroll />
+        <WebGLBackground />
         <GlobalMouseGlow />
         <SiteHeader />
         <main id="main-content" className="relative z-10">{children}</main>
         <SiteFooter />
+        <FloatingAction />
         <CookieBanner />
         <Toaster />
       </body>
