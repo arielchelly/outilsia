@@ -9,6 +9,7 @@ import { GlobalMouseGlow } from '@/components/global-mouse-glow';
 import { SmoothScroll } from '@/components/smooth-scroll';
 import dynamic from 'next/dynamic';
 import { FloatingAction } from '@/components/floating-action';
+import { FloatingShapes } from '@/components/floating-shapes';
 
 // WebGL shader is purely decorative — defer the chunk so it never competes
 // with hero hydration (Framer Motion + Spline). Loads after first paint.
@@ -173,6 +174,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <SmoothScroll />
         <WebGLBackground />
+        <FloatingShapes />
         <GlobalMouseGlow />
         <SiteHeader />
         <main id="main-content" className="relative z-10">{children}</main>

@@ -17,9 +17,11 @@ import { TrustBar } from '@/components/trust-bar';
 import { TestimonialsWall } from '@/components/testimonials-wall';
 import { FAQAccordion } from '@/components/faq-accordion';
 import { PullQuoteSection } from '@/components/pull-quote-section';
-import { PressMentions } from '@/components/press-mentions';
 import { AnimatedStats } from '@/components/animated-stats';
 import { InteractiveComparator } from '@/components/interactive-comparator';
+import { EditorialTeam } from '@/components/editorial-team';
+import { ManifestoSection } from '@/components/manifesto-section';
+import { SectionOrnament } from '@/components/section-ornament';
 import dynamic from 'next/dynamic';
 // Below-fold + heavy (Framer Motion + 4 sticky panels) — lazy-load so it
 // doesn't block initial render or compete with the constellation for CPU.
@@ -122,9 +124,6 @@ export default function HomePage() {
       {/* TRUST BAR — editorial pledge + aggregate metrics */}
       <TrustBar />
 
-      {/* PRESS MENTIONS — French media credibility strip */}
-      <PressMentions />
-
       {/* CATEGORIES */}
       <section id="categories" className="py-24">
         <div className="container">
@@ -203,8 +202,16 @@ export default function HomePage() {
       {/* WHY US — bento grid */}
       <WhyBento />
 
+      {/* MANIFESTO — 4 principes éditoriaux */}
+      <ManifestoSection />
+
       {/* INTERACTIVE COMPARATOR — face-à-face entre 2 outils */}
       <InteractiveComparator />
+
+      <SectionOrnament symbol="diamond" />
+
+      {/* EDITORIAL TEAM — la rédaction qui teste */}
+      <EditorialTeam />
 
       {/* TESTIMONIALS — 3 editorial reader quotes */}
       <TestimonialsWall />
