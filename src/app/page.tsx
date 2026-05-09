@@ -59,24 +59,23 @@ export default function HomePage() {
             <div className="relative z-10 flex flex-col justify-center py-8">
               <span className="inline-flex items-center gap-2 self-start px-4 py-1.5 bg-foreground/[0.04] border border-black/[0.06] rounded-full text-[0.78rem] text-muted-foreground mb-8 animate-fade-in">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_10px_var(--gold)] animate-pulse-blink" />
-                {toolsMeta.total} outils testés • Mis à jour mai 2026
+                Comparatif indépendant · {toolsMeta.total} outils IA testés · Mai 2026
               </span>
 
               <h1 className="text-4xl md:text-5xl lg:text-[4.2rem] font-normal leading-[1.02] mb-6 font-display tracking-[-0.025em]">
                 <span className="block text-foreground">
-                  <AnimatedText text="Trouvez l'outil IA" startDelay={0} />
+                  <AnimatedText text="Le comparatif" startDelay={0} />
                 </span>
                 <span className="block italic text-gold">
-                  <AnimatedText text="parfait." startDelay={0.12} />
+                  <AnimatedText text="indépendant" startDelay={0.12} />
                 </span>
                 <span className="block text-foreground">
-                  <AnimatedText text="En français." startDelay={0.22} />
+                  <AnimatedText text="des outils IA en français." startDelay={0.22} />
                 </span>
               </h1>
 
               <p className="mt-2 text-muted-foreground max-w-lg text-[1.05rem] leading-relaxed">
-                Des comparatifs indépendants, honnêtes et détaillés. Nous testons chaque outil pour que vous n'ayez
-                pas à le faire.
+                <strong className="text-foreground font-medium">TopOutils.IA</strong> teste, classe et compare les meilleurs outils d'intelligence artificielle dans 8 catégories — chatbots, image, vidéo, code, SEO, traduction, copywriting, automatisation. Sans sponsoring, mis à jour chaque mois.
               </p>
 
               <div className="flex flex-wrap gap-3 mt-8">
